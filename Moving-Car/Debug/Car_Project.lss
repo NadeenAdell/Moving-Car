@@ -1,0 +1,2139 @@
+
+Car_Project.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000ad2  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000002  00800060  00000ad2  00000b66  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000018  00800062  00800062  00000b68  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000b68  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000b98  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000290  00000000  00000000  00000bd4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001f5e  00000000  00000000  00000e64  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000d2a  00000000  00000000  00002dc2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00001c3b  00000000  00000000  00003aec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000005bc  00000000  00000000  00005728  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00005068  00000000  00000000  00005ce4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000f83  00000000  00000000  0000ad4c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000001e0  00000000  00000000  0000bccf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_macro  00001884  00000000  00000000  0000beaf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	29 c0       	rjmp	.+82     	; 0x54 <__ctors_end>
+   2:	00 00       	nop
+   4:	cd c3       	rjmp	.+1946   	; 0x7a0 <__vector_1>
+   6:	00 00       	nop
+   8:	f4 c3       	rjmp	.+2024   	; 0x7f2 <__vector_2>
+   a:	00 00       	nop
+   c:	1b c4       	rjmp	.+2102   	; 0x844 <__vector_3>
+   e:	00 00       	nop
+  10:	3c c0       	rjmp	.+120    	; 0x8a <__bad_interrupt>
+  12:	00 00       	nop
+  14:	66 c4       	rjmp	.+2252   	; 0x8e2 <__vector_5>
+  16:	00 00       	nop
+  18:	38 c0       	rjmp	.+112    	; 0x8a <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	36 c0       	rjmp	.+108    	; 0x8a <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	34 c0       	rjmp	.+104    	; 0x8a <__bad_interrupt>
+  22:	00 00       	nop
+  24:	32 c0       	rjmp	.+100    	; 0x8a <__bad_interrupt>
+  26:	00 00       	nop
+  28:	02 c5       	rjmp	.+2564   	; 0xa2e <__vector_10>
+  2a:	00 00       	nop
+  2c:	d7 c4       	rjmp	.+2478   	; 0x9dc <__vector_11>
+  2e:	00 00       	nop
+  30:	2c c0       	rjmp	.+88     	; 0x8a <__bad_interrupt>
+  32:	00 00       	nop
+  34:	2a c0       	rjmp	.+84     	; 0x8a <__bad_interrupt>
+  36:	00 00       	nop
+  38:	28 c0       	rjmp	.+80     	; 0x8a <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	26 c0       	rjmp	.+76     	; 0x8a <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	24 c0       	rjmp	.+72     	; 0x8a <__bad_interrupt>
+  42:	00 00       	nop
+  44:	22 c0       	rjmp	.+68     	; 0x8a <__bad_interrupt>
+  46:	00 00       	nop
+  48:	20 c0       	rjmp	.+64     	; 0x8a <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	1e c0       	rjmp	.+60     	; 0x8a <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	1c c0       	rjmp	.+56     	; 0x8a <__bad_interrupt>
+	...
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e2 ed       	ldi	r30, 0xD2	; 210
+  68:	fa e0       	ldi	r31, 0x0A	; 10
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a2 36       	cpi	r26, 0x62	; 98
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	20 e0       	ldi	r18, 0x00	; 0
+  78:	a2 e6       	ldi	r26, 0x62	; 98
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	aa 37       	cpi	r26, 0x7A	; 122
+  82:	b2 07       	cpc	r27, r18
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	d3 d1       	rcall	.+934    	; 0x42e <main>
+  88:	22 c5       	rjmp	.+2628   	; 0xace <_exit>
+
+0000008a <__bad_interrupt>:
+  8a:	ba cf       	rjmp	.-140    	; 0x0 <__vectors>
+
+0000008c <button0Callback>:
+}
+
+void button0Callback(void)
+{
+	//TIM0_AsyncEndDelay();
+	u8_g_state = car_initState;
+  8c:	10 92 79 00 	sts	0x0079, r1	; 0x800079 <u8_g_state>
+  90:	08 95       	ret
+
+00000092 <button1Callback>:
+}
+
+void button1Callback(void)
+{
+	/* Set the app state to car_startState */
+	if(u8_g_state == car_initState)
+  92:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <u8_g_state>
+  96:	81 11       	cpse	r24, r1
+  98:	03 c0       	rjmp	.+6      	; 0xa0 <button1Callback+0xe>
+	{
+		u8_g_state = car_startState;
+  9a:	81 e0       	ldi	r24, 0x01	; 1
+  9c:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <u8_g_state>
+  a0:	08 95       	ret
+
+000000a2 <start_state>:
+void start_state(void)
+{
+	static u16 start_timer = 0;  // Timer to count the elapsed time
+	
+	// Increment the timer with each call to this function
+	start_timer++;
+  a2:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <start_timer.1716>
+  a6:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <start_timer.1716+0x1>
+  aa:	01 96       	adiw	r24, 0x01	; 1
+  ac:	90 93 69 00 	sts	0x0069, r25	; 0x800069 <start_timer.1716+0x1>
+  b0:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <start_timer.1716>
+
+	if (start_timer == 3907)
+  b4:	83 34       	cpi	r24, 0x43	; 67
+  b6:	2f e0       	ldi	r18, 0x0F	; 15
+  b8:	92 07       	cpc	r25, r18
+  ba:	31 f4       	brne	.+12     	; 0xc8 <start_state+0x26>
+	 {
+		 MTIMER0_voidSetPreloadValue(192);
+  bc:	80 ec       	ldi	r24, 0xC0	; 192
+  be:	8c d4       	rcall	.+2328   	; 0x9d8 <MTIMER0_voidSetPreloadValue>
+		// After 1 second (1000 milliseconds), start moving forward
+		HDCMOTOR_startForward();
+  c0:	83 d1       	rcall	.+774    	; 0x3c8 <HDCMOTOR_startForward>
+		HLED_ledOn(LED_1);  // Turn on LED1 to indicate forward movement
+  c2:	86 e0       	ldi	r24, 0x06	; 6
+  c4:	34 c1       	rjmp	.+616    	; 0x32e <HLED_ledOn>
+  c6:	08 95       	ret
+  c8:	88 3b       	cpi	r24, 0xB8	; 184
+		} 
+		else if (start_timer == 3000) 
+  ca:	9b 40       	sbci	r25, 0x0B	; 11
+  cc:	31 f4       	brne	.+12     	; 0xda <start_state+0x38>
+		{
+		// After 3 seconds (3000 milliseconds), stop and transition to the next state
+		HDCMOTOR_stop();
+  ce:	8d d1       	rcall	.+794    	; 0x3ea <HDCMOTOR_stop>
+  d0:	86 e0       	ldi	r24, 0x06	; 6
+		HLED_ledOff(LED_1);  // Turn off LED1
+  d2:	4b d1       	rcall	.+662    	; 0x36a <HLED_ledOff>
+  d4:	82 e0       	ldi	r24, 0x02	; 2
+  d6:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <u8_g_state>
+		u8_g_state = car_longSideState;  // Transition to the next state
+  da:	08 95       	ret
+
+000000dc <stop>:
+  dc:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <stop_timer.1724>
+void stop(void)
+{
+	static u16 stop_timer = 0;  // Timer to count the elapsed time
+	
+	// Increment the timer with each call to this function
+	stop_timer++;
+  e0:	90 91 65 00 	lds	r25, 0x0065	; 0x800065 <stop_timer.1724+0x1>
+  e4:	01 96       	adiw	r24, 0x01	; 1
+  e6:	90 93 65 00 	sts	0x0065, r25	; 0x800065 <stop_timer.1724+0x1>
+  ea:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <stop_timer.1724>
+
+	if (stop_timer == 1954) 
+  ee:	82 3a       	cpi	r24, 0xA2	; 162
+  f0:	27 e0       	ldi	r18, 0x07	; 7
+  f2:	92 07       	cpc	r25, r18
+  f4:	41 f4       	brne	.+16     	; 0x106 <stop+0x2a>
+	{
+		MTIMER0_voidSetPreloadValue(224);
+  f6:	80 ee       	ldi	r24, 0xE0	; 224
+  f8:	6f d4       	rcall	.+2270   	; 0x9d8 <MTIMER0_voidSetPreloadValue>
+		// After 0.5 seconds (500 milliseconds), set the car's speed to 0 (stop)
+		H_PWM_NORMAL_setDutyCycle(0);
+  fa:	80 e0       	ldi	r24, 0x00	; 0
+
+		// Stop the car and turn on LED3 to indicate stopping
+		HDCMOTOR_stop();
+  fc:	f7 d0       	rcall	.+494    	; 0x2ec <H_PWM_NORMAL_setDutyCycle>
+		HLED_ledOn(LED_3);
+  fe:	75 d1       	rcall	.+746    	; 0x3ea <HDCMOTOR_stop>
+ 100:	83 e0       	ldi	r24, 0x03	; 3
+ 102:	15 c1       	rjmp	.+554    	; 0x32e <HLED_ledOn>
+ 104:	08 95       	ret
+		} else if (stop_timer == 1000)
+ 106:	88 3e       	cpi	r24, 0xE8	; 232
+ 108:	93 40       	sbci	r25, 0x03	; 3
+		 {
+		// After 1 second (1000 milliseconds), turn off LED3 and transition to the next state
+		HLED_ledOff(LED_3);
+ 10a:	29 f4       	brne	.+10     	; 0x116 <stop+0x3a>
+ 10c:	83 e0       	ldi	r24, 0x03	; 3
+ 10e:	2d d1       	rcall	.+602    	; 0x36a <HLED_ledOff>
+		u8_g_state = car_rotateState;  // Transition to the next state
+ 110:	83 e0       	ldi	r24, 0x03	; 3
+ 112:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <u8_g_state>
+ 116:	08 95       	ret
+
+00000118 <long_side>:
+void long_side(void)
+{
+	static u16 long_side_timer = 0;  // Timer to count the elapsed time
+	
+	// Increment the timer with each call to this function
+	long_side_timer++;
+ 118:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <long_side_timer.1720>
+ 11c:	90 91 67 00 	lds	r25, 0x0067	; 0x800067 <long_side_timer.1720+0x1>
+ 120:	01 96       	adiw	r24, 0x01	; 1
+ 122:	90 93 67 00 	sts	0x0067, r25	; 0x800067 <long_side_timer.1720+0x1>
+ 126:	80 93 66 00 	sts	0x0066, r24	; 0x800066 <long_side_timer.1720>
+
+	if (long_side_timer == 11719) 
+ 12a:	87 3c       	cpi	r24, 0xC7	; 199
+ 12c:	2d e2       	ldi	r18, 0x2D	; 45
+ 12e:	92 07       	cpc	r25, r18
+ 130:	41 f4       	brne	.+16     	; 0x142 <long_side+0x2a>
+	{
+		MTIMER0_voidSetPreloadValue(64);
+ 132:	80 e4       	ldi	r24, 0x40	; 64
+ 134:	51 d4       	rcall	.+2210   	; 0x9d8 <MTIMER0_voidSetPreloadValue>
+		// After 1.5 seconds (1500 milliseconds), set the car's speed to 50% of its maximum speed
+		H_PWM_NORMAL_setDutyCycle(50);
+ 136:	82 e3       	ldi	r24, 0x32	; 50
+
+		// Start moving forward
+		HDCMOTOR_startForward();
+ 138:	d9 d0       	rcall	.+434    	; 0x2ec <H_PWM_NORMAL_setDutyCycle>
+		HLED_ledOn(LED_1);  // Turn on LED1 to indicate forward movement
+ 13a:	46 d1       	rcall	.+652    	; 0x3c8 <HDCMOTOR_startForward>
+ 13c:	86 e0       	ldi	r24, 0x06	; 6
+ 13e:	f7 c0       	rjmp	.+494    	; 0x32e <HLED_ledOn>
+ 140:	08 95       	ret
+		} 
+		else if (long_side_timer == 4500)
+ 142:	84 39       	cpi	r24, 0x94	; 148
+ 144:	21 e1       	ldi	r18, 0x11	; 17
+		 {
+		// After 4.5 seconds (4500 milliseconds), stop the car for 0.5 seconds
+		HDCMOTOR_stop();
+ 146:	92 07       	cpc	r25, r18
+ 148:	21 f4       	brne	.+8      	; 0x152 <long_side+0x3a>
+		HLED_ledOff(LED_1);  // Turn off LED1
+ 14a:	4f d1       	rcall	.+670    	; 0x3ea <HDCMOTOR_stop>
+ 14c:	86 e0       	ldi	r24, 0x06	; 6
+ 14e:	0d c1       	rjmp	.+538    	; 0x36a <HLED_ledOff>
+		}
+		 else if (long_side_timer == 5000) 
+ 150:	08 95       	ret
+ 152:	88 38       	cpi	r24, 0x88	; 136
+		 {
+		// After 5 seconds (5000 milliseconds), rotate 90 degrees to the right
+		HDCMOTOR_Rotate();
+ 154:	23 e1       	ldi	r18, 0x13	; 19
+ 156:	92 07       	cpc	r25, r18
+		HLED_ledOff(LED_1);  // Turn off LED1
+ 158:	31 f4       	brne	.+12     	; 0x166 <long_side+0x4e>
+ 15a:	58 d1       	rcall	.+688    	; 0x40c <HDCMOTOR_Rotate>
+		HLED_ledOn(LED_4);  // Turn on LED4 to indicate rotation
+ 15c:	86 e0       	ldi	r24, 0x06	; 6
+ 15e:	05 d1       	rcall	.+522    	; 0x36a <HLED_ledOff>
+		} 
+		else if (long_side_timer == 5500)
+ 160:	82 e0       	ldi	r24, 0x02	; 2
+ 162:	e5 c0       	rjmp	.+458    	; 0x32e <HLED_ledOn>
+ 164:	08 95       	ret
+		 {
+		// After 5.5 seconds (5500 milliseconds), stop for 0.5 seconds and transition to the next state
+		HDCMOTOR_stop();
+ 166:	8c 37       	cpi	r24, 0x7C	; 124
+ 168:	95 41       	sbci	r25, 0x15	; 21
+		HLED_ledOff(LED_4);  // Turn off LED4
+ 16a:	41 f4       	brne	.+16     	; 0x17c <long_side+0x64>
+ 16c:	3e d1       	rcall	.+636    	; 0x3ea <HDCMOTOR_stop>
+ 16e:	82 e0       	ldi	r24, 0x02	; 2
+		HLED_ledOn(LED_3);  // Turn on LED3 to indicate stopping
+ 170:	fc d0       	rcall	.+504    	; 0x36a <HLED_ledOff>
+ 172:	83 e0       	ldi	r24, 0x03	; 3
+ 174:	dc d0       	rcall	.+440    	; 0x32e <HLED_ledOn>
+		u8_g_state = car_shortSideState;  // Transition to the next state
+ 176:	84 e0       	ldi	r24, 0x04	; 4
+ 178:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <u8_g_state>
+ 17c:	08 95       	ret
+
+0000017e <short_side>:
+void short_side(void)
+{
+	static u16 short_side_timer = 0;  // Timer to count the elapsed time
+	
+	// Increment the timer with each call to this function
+	short_side_timer++;
+ 17e:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <__data_end>
+ 182:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <__data_end+0x1>
+ 186:	01 96       	adiw	r24, 0x01	; 1
+ 188:	90 93 63 00 	sts	0x0063, r25	; 0x800063 <__data_end+0x1>
+ 18c:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <__data_end>
+
+	if (short_side_timer == 7813) {
+ 190:	85 38       	cpi	r24, 0x85	; 133
+ 192:	2e e1       	ldi	r18, 0x1E	; 30
+ 194:	92 07       	cpc	r25, r18
+ 196:	41 f4       	brne	.+16     	; 0x1a8 <short_side+0x2a>
+		MTIMER0_voidSetPreloadValue(128);
+ 198:	80 e8       	ldi	r24, 0x80	; 128
+ 19a:	1e d4       	rcall	.+2108   	; 0x9d8 <MTIMER0_voidSetPreloadValue>
+		// After 1 second (1000 milliseconds), set the car's speed to 30% of its maximum speed
+		H_PWM_NORMAL_setDutyCycle(30);
+ 19c:	8e e1       	ldi	r24, 0x1E	; 30
+
+		// Start moving forward
+		HDCMOTOR_startForward();
+ 19e:	a6 d0       	rcall	.+332    	; 0x2ec <H_PWM_NORMAL_setDutyCycle>
+		HLED_ledOn(LED_2);  // Turn on LED2 to indicate forward movement
+ 1a0:	13 d1       	rcall	.+550    	; 0x3c8 <HDCMOTOR_startForward>
+ 1a2:	85 e0       	ldi	r24, 0x05	; 5
+ 1a4:	c4 c0       	rjmp	.+392    	; 0x32e <HLED_ledOn>
+ 1a6:	08 95       	ret
+		} else if (short_side_timer == 3000) {
+ 1a8:	88 3b       	cpi	r24, 0xB8	; 184
+ 1aa:	2b e0       	ldi	r18, 0x0B	; 11
+		// After 3 seconds (3000 milliseconds), stop the car for 0.5 seconds
+		HDCMOTOR_stop();
+ 1ac:	92 07       	cpc	r25, r18
+ 1ae:	21 f4       	brne	.+8      	; 0x1b8 <short_side+0x3a>
+		HLED_ledOff(LED_2);  // Turn off LED2
+ 1b0:	1c d1       	rcall	.+568    	; 0x3ea <HDCMOTOR_stop>
+ 1b2:	85 e0       	ldi	r24, 0x05	; 5
+ 1b4:	da c0       	rjmp	.+436    	; 0x36a <HLED_ledOff>
+		} else if (short_side_timer == 3500) {
+ 1b6:	08 95       	ret
+ 1b8:	8c 3a       	cpi	r24, 0xAC	; 172
+		// After 3.5 seconds (3500 milliseconds), rotate 90 degrees to the right
+		HDCMOTOR_Rotate();
+ 1ba:	2d e0       	ldi	r18, 0x0D	; 13
+ 1bc:	92 07       	cpc	r25, r18
+		HLED_ledOff(LED_2);  // Turn off LED2
+ 1be:	31 f4       	brne	.+12     	; 0x1cc <short_side+0x4e>
+ 1c0:	25 d1       	rcall	.+586    	; 0x40c <HDCMOTOR_Rotate>
+		HLED_ledOn(LED_4);  // Turn on LED4 to indicate rotation
+ 1c2:	85 e0       	ldi	r24, 0x05	; 5
+ 1c4:	d2 d0       	rcall	.+420    	; 0x36a <HLED_ledOff>
+		} else if (short_side_timer == 4000) {
+ 1c6:	82 e0       	ldi	r24, 0x02	; 2
+ 1c8:	b2 c0       	rjmp	.+356    	; 0x32e <HLED_ledOn>
+ 1ca:	08 95       	ret
+		// After 4 seconds (4000 milliseconds), stop for 0.5 seconds and transition to the next state
+		HDCMOTOR_stop();
+ 1cc:	80 3a       	cpi	r24, 0xA0	; 160
+ 1ce:	9f 40       	sbci	r25, 0x0F	; 15
+		HLED_ledOff(LED_4);  // Turn off LED4
+ 1d0:	41 f4       	brne	.+16     	; 0x1e2 <short_side+0x64>
+ 1d2:	0b d1       	rcall	.+534    	; 0x3ea <HDCMOTOR_stop>
+ 1d4:	82 e0       	ldi	r24, 0x02	; 2
+		HLED_ledOn(LED_3);  // Turn on LED3 to indicate stopping
+ 1d6:	c9 d0       	rcall	.+402    	; 0x36a <HLED_ledOff>
+ 1d8:	83 e0       	ldi	r24, 0x03	; 3
+ 1da:	a9 d0       	rcall	.+338    	; 0x32e <HLED_ledOn>
+		u8_g_state = car_rotateState;  // Transition to the next state
+ 1dc:	83 e0       	ldi	r24, 0x03	; 3
+ 1de:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <u8_g_state>
+ 1e2:	08 95       	ret
+
+000001e4 <initCar>:
+
+void initCar(void)
+{
+
+	/* Initialize LEDs */
+	HLED_ledInit(LED_1);     //Long
+ 1e4:	86 e0       	ldi	r24, 0x06	; 6
+ 1e6:	85 d0       	rcall	.+266    	; 0x2f2 <HLED_ledInit>
+	HLED_ledInit(LED_2);     //Short
+ 1e8:	85 e0       	ldi	r24, 0x05	; 5
+ 1ea:	83 d0       	rcall	.+262    	; 0x2f2 <HLED_ledInit>
+	HLED_ledInit(LED_4);     //Rotate
+ 1ec:	82 e0       	ldi	r24, 0x02	; 2
+ 1ee:	81 d0       	rcall	.+258    	; 0x2f2 <HLED_ledInit>
+	HLED_ledInit(LED_3);     //Stop
+ 1f0:	83 e0       	ldi	r24, 0x03	; 3
+ 1f2:	7f d0       	rcall	.+254    	; 0x2f2 <HLED_ledInit>
+	
+	/* Initialize Buttons */
+	HPushButtonOn_init(BUTTON_START);
+ 1f4:	83 e0       	ldi	r24, 0x03	; 3
+	HPushButtonOn_init(BUTTON_STOP);
+ 1f6:	4f d0       	rcall	.+158    	; 0x296 <HPushButtonOn_init>
+ 1f8:	82 e0       	ldi	r24, 0x02	; 2
+ 1fa:	4d d0       	rcall	.+154    	; 0x296 <HPushButtonOn_init>
+	
+	/* Initialize Motors */
+	HDCMotor_init();
+ 1fc:	d4 d0       	rcall	.+424    	; 0x3a6 <HDCMotor_init>
+	
+	/* Initialize PWM Timer */
+	MTIMER0_voidInit();
+ 1fe:	cf d3       	rcall	.+1950   	; 0x99e <MTIMER0_voidInit>
+ 200:	73 d0       	rcall	.+230    	; 0x2e8 <H_PWM_NORMAL_init>
+	H_PWM_NORMAL_init();
+ 202:	46 e4       	ldi	r20, 0x46	; 70
+ 204:	50 e0       	ldi	r21, 0x00	; 0
+
+	
+	/* Initialize External Interrupts */
+	H_EXTINT_create(EXTINT0, FALLING_EDGE , button0Callback);
+ 206:	61 e0       	ldi	r22, 0x01	; 1
+ 208:	80 e0       	ldi	r24, 0x00	; 0
+ 20a:	58 d0       	rcall	.+176    	; 0x2bc <H_EXTINT_create>
+ 20c:	49 e4       	ldi	r20, 0x49	; 73
+ 20e:	50 e0       	ldi	r21, 0x00	; 0
+	H_EXTINT_create(EXTINT1, FALLING_EDGE, button1Callback);
+ 210:	61 e0       	ldi	r22, 0x01	; 1
+ 212:	81 e0       	ldi	r24, 0x01	; 1
+ 214:	53 c0       	rjmp	.+166    	; 0x2bc <H_EXTINT_create>
+ 216:	08 95       	ret
+
+00000218 <carApp>:
+ 218:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <u8_g_state>
+ 21c:	82 30       	cpi	r24, 0x02	; 2
+}
+*/
+void carApp(void)
+{
+	
+	switch(u8_g_state)
+ 21e:	e1 f0       	breq	.+56     	; 0x258 <carApp+0x40>
+ 220:	28 f4       	brcc	.+10     	; 0x22c <carApp+0x14>
+ 222:	88 23       	and	r24, r24
+ 224:	41 f0       	breq	.+16     	; 0x236 <carApp+0x1e>
+ 226:	81 30       	cpi	r24, 0x01	; 1
+ 228:	81 f0       	breq	.+32     	; 0x24a <carApp+0x32>
+ 22a:	08 95       	ret
+ 22c:	83 30       	cpi	r24, 0x03	; 3
+ 22e:	f1 f0       	breq	.+60     	; 0x26c <carApp+0x54>
+ 230:	84 30       	cpi	r24, 0x04	; 4
+ 232:	39 f1       	breq	.+78     	; 0x282 <carApp+0x6a>
+ 234:	08 95       	ret
+	{
+		
+		case car_initState:
+		HDCMOTOR_stop();
+ 236:	d9 d0       	rcall	.+434    	; 0x3ea <HDCMOTOR_stop>
+		HLED_ledOff(LED_1);
+ 238:	86 e0       	ldi	r24, 0x06	; 6
+ 23a:	97 d0       	rcall	.+302    	; 0x36a <HLED_ledOff>
+		HLED_ledOff(LED_2);
+ 23c:	85 e0       	ldi	r24, 0x05	; 5
+ 23e:	95 d0       	rcall	.+298    	; 0x36a <HLED_ledOff>
+		HLED_ledOff(LED_4);
+ 240:	82 e0       	ldi	r24, 0x02	; 2
+ 242:	93 d0       	rcall	.+294    	; 0x36a <HLED_ledOff>
+		HLED_ledOff(LED_3);
+ 244:	83 e0       	ldi	r24, 0x03	; 3
+ 246:	91 c0       	rjmp	.+290    	; 0x36a <HLED_ledOff>
+ 248:	08 95       	ret
+		break;
+ 24a:	82 e0       	ldi	r24, 0x02	; 2
+		
+		case car_startState:
+		u8_g_state = car_longSideState;
+ 24c:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <u8_g_state>
+		MTIMER0_voidsetCallBackOVF(start_state);
+ 250:	81 e5       	ldi	r24, 0x51	; 81
+ 252:	90 e0       	ldi	r25, 0x00	; 0
+ 254:	ba c3       	rjmp	.+1908   	; 0x9ca <MTIMER0_voidsetCallBackOVF>
+ 256:	08 95       	ret
+		//HDCMOTOR_startForward();
+		
+		break;
+		
+		case car_longSideState:
+		u8_g_state = car_rotateState;
+ 258:	83 e0       	ldi	r24, 0x03	; 3
+ 25a:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <u8_g_state>
+		//HLED_ledOff(LED_4);
+
+		MTIMER0_voidsetCallBackOVF(long_side);
+ 25e:	8c e8       	ldi	r24, 0x8C	; 140
+ 260:	90 e0       	ldi	r25, 0x00	; 0
+ 262:	b3 d3       	rcall	.+1894   	; 0x9ca <MTIMER0_voidsetCallBackOVF>
+ 264:	84 e0       	ldi	r24, 0x04	; 4
+		u8_gs_nextSide = car_shortSideState;
+ 266:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 26a:	08 95       	ret
+		break;
+
+		case car_rotateState:
+		u8_g_state = u8_gs_nextSide;
+ 26c:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 270:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <u8_g_state>
+		//HLED_ledOn(LED_4);
+		MTIMER0_voidsetCallBackOVF(stop);
+ 274:	8e e6       	ldi	r24, 0x6E	; 110
+ 276:	90 e0       	ldi	r25, 0x00	; 0
+		//HLED_ledOff(LED_3);
+		//HDCMOTOR_Rotate();
+		MTIMER0_voidsetCallBackOVF(stop);
+ 278:	a8 d3       	rcall	.+1872   	; 0x9ca <MTIMER0_voidsetCallBackOVF>
+ 27a:	8e e6       	ldi	r24, 0x6E	; 110
+ 27c:	90 e0       	ldi	r25, 0x00	; 0
+ 27e:	a5 c3       	rjmp	.+1866   	; 0x9ca <MTIMER0_voidsetCallBackOVF>
+		break;
+ 280:	08 95       	ret
+		
+		case car_shortSideState:
+		//HLED_ledOff(LED_3);
+		MTIMER0_voidsetCallBackOVF(short_side);
+ 282:	8f eb       	ldi	r24, 0xBF	; 191
+ 284:	90 e0       	ldi	r25, 0x00	; 0
+ 286:	a1 d3       	rcall	.+1858   	; 0x9ca <MTIMER0_voidsetCallBackOVF>
+ 288:	83 e0       	ldi	r24, 0x03	; 3
+		//HLED_ledOff(LED_2);
+		u8_g_state = car_rotateState;
+ 28a:	80 93 79 00 	sts	0x0079, r24	; 0x800079 <u8_g_state>
+ 28e:	82 e0       	ldi	r24, 0x02	; 2
+		u8_gs_nextSide = car_longSideState;
+ 290:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 294:	08 95       	ret
+
+00000296 <HPushButtonOn_init>:
+#include <util/delay.h>
+
+/**********************************************************Implementation*******************************************/
+void HPushButtonOn_init(u8 Copy_u8buttonNum)
+{
+	switch(Copy_u8buttonNum)
+ 296:	82 30       	cpi	r24, 0x02	; 2
+ 298:	49 f0       	breq	.+18     	; 0x2ac <HPushButtonOn_init+0x16>
+ 29a:	83 30       	cpi	r24, 0x03	; 3
+ 29c:	71 f4       	brne	.+28     	; 0x2ba <HPushButtonOn_init+0x24>
+	{
+		case BUTTON_START:
+		MDIO_voidSetPinDirection(BUTTON_PORT , BUTTON_START , PIN_IN_DIR);
+ 29e:	40 e0       	ldi	r20, 0x00	; 0
+ 2a0:	63 e0       	ldi	r22, 0x03	; 3
+ 2a2:	c8 d0       	rcall	.+400    	; 0x434 <MDIO_voidSetPinDirection>
+		MDIO_VoidSetPullupResistor(BUTTON_PORT,Copy_u8buttonNum);
+ 2a4:	63 e0       	ldi	r22, 0x03	; 3
+ 2a6:	83 e0       	ldi	r24, 0x03	; 3
+ 2a8:	b7 c1       	rjmp	.+878    	; 0x618 <MDIO_VoidSetPullupResistor>
+		break;
+ 2aa:	08 95       	ret
+		
+		case BUTTON_STOP:
+		MDIO_voidSetPinDirection(BUTTON_PORT , BUTTON_STOP , PIN_IN_DIR);
+ 2ac:	40 e0       	ldi	r20, 0x00	; 0
+ 2ae:	62 e0       	ldi	r22, 0x02	; 2
+ 2b0:	83 e0       	ldi	r24, 0x03	; 3
+ 2b2:	c0 d0       	rcall	.+384    	; 0x434 <MDIO_voidSetPinDirection>
+		MDIO_VoidSetPullupResistor(BUTTON_PORT ,Copy_u8buttonNum);
+ 2b4:	62 e0       	ldi	r22, 0x02	; 2
+ 2b6:	83 e0       	ldi	r24, 0x03	; 3
+ 2b8:	af c1       	rjmp	.+862    	; 0x618 <MDIO_VoidSetPullupResistor>
+ 2ba:	08 95       	ret
+
+000002bc <H_EXTINT_create>:
+ 2bc:	0f 93       	push	r16
+#include "h_ext_int.h"
+EN_EXTINT_ERROR H_EXTINT_create(EN_EXINT_NUMBER INTx ,EN_Sense_Control INTxSense,void(*ptrfunc)(void))
+{
+ 2be:	1f 93       	push	r17
+ 2c0:	cf 93       	push	r28
+ 2c2:	c8 2f       	mov	r28, r24
+ 2c4:	8a 01       	movw	r16, r20
+	if(!EXTINT_init(INTx,INTxSense) && !EXTINT_CallBack(INTx,ptrfunc)) 
+ 2c6:	dc d1       	rcall	.+952    	; 0x680 <EXTINT_init>
+ 2c8:	81 11       	cpse	r24, r1
+ 2ca:	08 c0       	rjmp	.+16     	; 0x2dc <H_EXTINT_create+0x20>
+ 2cc:	b8 01       	movw	r22, r16
+ 2ce:	8c 2f       	mov	r24, r28
+ 2d0:	4e d2       	rcall	.+1180   	; 0x76e <EXTINT_CallBack>
+	{
+		return EXTINT_OK;
+ 2d2:	91 e0       	ldi	r25, 0x01	; 1
+ 2d4:	81 11       	cpse	r24, r1
+ 2d6:	03 c0       	rjmp	.+6      	; 0x2de <H_EXTINT_create+0x22>
+ 2d8:	90 e0       	ldi	r25, 0x00	; 0
+ 2da:	01 c0       	rjmp	.+2      	; 0x2de <H_EXTINT_create+0x22>
+	}
+	return EXTINT_NOT_OK;
+ 2dc:	91 e0       	ldi	r25, 0x01	; 1
+	
+ 2de:	89 2f       	mov	r24, r25
+ 2e0:	cf 91       	pop	r28
+ 2e2:	1f 91       	pop	r17
+ 2e4:	0f 91       	pop	r16
+ 2e6:	08 95       	ret
+
+000002e8 <H_PWM_NORMAL_init>:
+}
+
+
+void H_PWM_NORMAL_stop(void)
+{
+	timer2_stop();                      //stop thetimer
+ 2e8:	d6 c2       	rjmp	.+1452   	; 0x896 <timer2_init>
+ 2ea:	08 95       	ret
+
+000002ec <H_PWM_NORMAL_setDutyCycle>:
+}
+
+
+void H_PWM_NORMAL_setDutyCycle(u8 dutycycle)
+{
+	timer2_set_pwm_normal(dutycycle);       //set the duty cycle
+ 2ec:	e4 d2       	rcall	.+1480   	; 0x8b6 <timer2_set_pwm_normal>
+	timer2_start();
+ 2ee:	d9 c2       	rjmp	.+1458   	; 0x8a2 <timer2_start>
+ 2f0:	08 95       	ret
+
+000002f2 <HLED_ledInit>:
+
+/****************************************************Implement**********************************/
+
+void HLED_ledInit(u8 Copy_u8ledNum)
+{
+	switch(Copy_u8ledNum)
+ 2f2:	83 30       	cpi	r24, 0x03	; 3
+ 2f4:	91 f0       	breq	.+36     	; 0x31a <HLED_ledInit+0x28>
+ 2f6:	18 f4       	brcc	.+6      	; 0x2fe <HLED_ledInit+0xc>
+ 2f8:	82 30       	cpi	r24, 0x02	; 2
+ 2fa:	a1 f0       	breq	.+40     	; 0x324 <HLED_ledInit+0x32>
+ 2fc:	08 95       	ret
+ 2fe:	85 30       	cpi	r24, 0x05	; 5
+ 300:	39 f0       	breq	.+14     	; 0x310 <HLED_ledInit+0x1e>
+ 302:	86 30       	cpi	r24, 0x06	; 6
+ 304:	99 f4       	brne	.+38     	; 0x32c <HLED_ledInit+0x3a>
+	{
+		case LED_1:   //Forward In Long Side 3s
+		/*Make Direction Out*/
+		MDIO_voidSetPinDirection(LED_PORT_SIDE , LED_1 , PIN_OUT_DIR);
+ 306:	41 e0       	ldi	r20, 0x01	; 1
+ 308:	66 e0       	ldi	r22, 0x06	; 6
+ 30a:	80 e0       	ldi	r24, 0x00	; 0
+ 30c:	93 c0       	rjmp	.+294    	; 0x434 <MDIO_voidSetPinDirection>
+		break;
+ 30e:	08 95       	ret
+		
+		case LED_2:    //Forward In Short Side 2s
+		/*Make Direction Out*/
+		MDIO_voidSetPinDirection(LED_PORT_SIDE , LED_2 , PIN_OUT_DIR);
+ 310:	41 e0       	ldi	r20, 0x01	; 1
+ 312:	65 e0       	ldi	r22, 0x05	; 5
+ 314:	80 e0       	ldi	r24, 0x00	; 0
+ 316:	8e c0       	rjmp	.+284    	; 0x434 <MDIO_voidSetPinDirection>
+		break;
+ 318:	08 95       	ret
+		
+		case LED_3:   //stop
+		/*Make Direction Out*/
+		MDIO_voidSetPinDirection(LED_PORT_ACTION , LED_3 , PIN_OUT_DIR);
+ 31a:	41 e0       	ldi	r20, 0x01	; 1
+ 31c:	63 e0       	ldi	r22, 0x03	; 3
+ 31e:	80 e0       	ldi	r24, 0x00	; 0
+ 320:	89 c0       	rjmp	.+274    	; 0x434 <MDIO_voidSetPinDirection>
+		break;
+ 322:	08 95       	ret
+		
+		case LED_4:   //Rotate
+		/*Make Direction Out*/
+		MDIO_voidSetPinDirection(LED_PORT_ACTION , LED_4 , PIN_OUT_DIR);
+ 324:	41 e0       	ldi	r20, 0x01	; 1
+ 326:	62 e0       	ldi	r22, 0x02	; 2
+ 328:	80 e0       	ldi	r24, 0x00	; 0
+ 32a:	84 c0       	rjmp	.+264    	; 0x434 <MDIO_voidSetPinDirection>
+ 32c:	08 95       	ret
+
+0000032e <HLED_ledOn>:
+	
+}
+
+void HLED_ledOn (u8 Copy_u8ledNum)
+{
+	switch(Copy_u8ledNum)
+ 32e:	83 30       	cpi	r24, 0x03	; 3
+ 330:	91 f0       	breq	.+36     	; 0x356 <HLED_ledOn+0x28>
+ 332:	18 f4       	brcc	.+6      	; 0x33a <HLED_ledOn+0xc>
+ 334:	82 30       	cpi	r24, 0x02	; 2
+ 336:	a1 f0       	breq	.+40     	; 0x360 <HLED_ledOn+0x32>
+ 338:	08 95       	ret
+ 33a:	85 30       	cpi	r24, 0x05	; 5
+ 33c:	39 f0       	breq	.+14     	; 0x34c <HLED_ledOn+0x1e>
+ 33e:	86 30       	cpi	r24, 0x06	; 6
+ 340:	99 f4       	brne	.+38     	; 0x368 <HLED_ledOn+0x3a>
+	{
+		case LED_1:   //Forward In Long Side 3s
+		/*Make Value Is High*/
+		MDIO_voidSetPinValue(LED_PORT_SIDE , LED_1 , PIN_HIGH_VALUE);		
+ 342:	41 e0       	ldi	r20, 0x01	; 1
+ 344:	66 e0       	ldi	r22, 0x06	; 6
+ 346:	80 e0       	ldi	r24, 0x00	; 0
+ 348:	ee c0       	rjmp	.+476    	; 0x526 <MDIO_voidSetPinValue>
+		break;
+ 34a:	08 95       	ret
+		
+		case LED_2:    //Forward In Short Side 2s
+		/*Make Value Is High*/
+		MDIO_voidSetPinValue(LED_PORT_SIDE , LED_2 , PIN_HIGH_VALUE);
+ 34c:	41 e0       	ldi	r20, 0x01	; 1
+ 34e:	65 e0       	ldi	r22, 0x05	; 5
+ 350:	80 e0       	ldi	r24, 0x00	; 0
+ 352:	e9 c0       	rjmp	.+466    	; 0x526 <MDIO_voidSetPinValue>
+		break;
+ 354:	08 95       	ret
+		
+		case LED_3:   //stop 
+		/*Make Value Is High*/
+		MDIO_voidSetPinValue(LED_PORT_ACTION , LED_3 , PIN_HIGH_VALUE);
+ 356:	41 e0       	ldi	r20, 0x01	; 1
+ 358:	63 e0       	ldi	r22, 0x03	; 3
+ 35a:	80 e0       	ldi	r24, 0x00	; 0
+ 35c:	e4 c0       	rjmp	.+456    	; 0x526 <MDIO_voidSetPinValue>
+		break;
+ 35e:	08 95       	ret
+		
+		case LED_4:   //Rotate
+		/*Make Value Is High*/
+		MDIO_voidSetPinValue(LED_PORT_ACTION , LED_4 , PIN_HIGH_VALUE);
+ 360:	41 e0       	ldi	r20, 0x01	; 1
+ 362:	62 e0       	ldi	r22, 0x02	; 2
+ 364:	80 e0       	ldi	r24, 0x00	; 0
+ 366:	df c0       	rjmp	.+446    	; 0x526 <MDIO_voidSetPinValue>
+ 368:	08 95       	ret
+
+0000036a <HLED_ledOff>:
+	}
+}
+
+void HLED_ledOff(u8 Copy_u8ledNum)
+{
+	switch(Copy_u8ledNum)
+ 36a:	83 30       	cpi	r24, 0x03	; 3
+ 36c:	91 f0       	breq	.+36     	; 0x392 <HLED_ledOff+0x28>
+ 36e:	18 f4       	brcc	.+6      	; 0x376 <HLED_ledOff+0xc>
+ 370:	82 30       	cpi	r24, 0x02	; 2
+ 372:	a1 f0       	breq	.+40     	; 0x39c <HLED_ledOff+0x32>
+ 374:	08 95       	ret
+ 376:	85 30       	cpi	r24, 0x05	; 5
+ 378:	39 f0       	breq	.+14     	; 0x388 <HLED_ledOff+0x1e>
+ 37a:	86 30       	cpi	r24, 0x06	; 6
+ 37c:	99 f4       	brne	.+38     	; 0x3a4 <HLED_ledOff+0x3a>
+	{
+		case LED_1:   //Forward In Long Side 3s
+		/*Make Value Is Low*/
+		MDIO_voidSetPinValue(LED_PORT_SIDE , LED_1 , PIN_LOW_VALUE);
+ 37e:	40 e0       	ldi	r20, 0x00	; 0
+ 380:	66 e0       	ldi	r22, 0x06	; 6
+ 382:	80 e0       	ldi	r24, 0x00	; 0
+ 384:	d0 c0       	rjmp	.+416    	; 0x526 <MDIO_voidSetPinValue>
+		break;
+ 386:	08 95       	ret
+		
+		case LED_2:    //Forward In Short Side 2s
+		/*Make Value Is Low*/
+		MDIO_voidSetPinValue(LED_PORT_SIDE , LED_2 , PIN_LOW_VALUE);
+ 388:	40 e0       	ldi	r20, 0x00	; 0
+ 38a:	65 e0       	ldi	r22, 0x05	; 5
+ 38c:	80 e0       	ldi	r24, 0x00	; 0
+ 38e:	cb c0       	rjmp	.+406    	; 0x526 <MDIO_voidSetPinValue>
+		break;
+ 390:	08 95       	ret
+		
+		case LED_3:   //stop
+		/*Make Value Is Low*/
+		MDIO_voidSetPinValue(LED_PORT_ACTION , LED_3 , PIN_LOW_VALUE);
+ 392:	40 e0       	ldi	r20, 0x00	; 0
+ 394:	63 e0       	ldi	r22, 0x03	; 3
+ 396:	80 e0       	ldi	r24, 0x00	; 0
+ 398:	c6 c0       	rjmp	.+396    	; 0x526 <MDIO_voidSetPinValue>
+		break;
+ 39a:	08 95       	ret
+		
+		case LED_4:   //Rotate
+		/*Make Value Is Low*/
+		MDIO_voidSetPinValue(LED_PORT_ACTION , LED_4 , PIN_LOW_VALUE);
+ 39c:	40 e0       	ldi	r20, 0x00	; 0
+ 39e:	62 e0       	ldi	r22, 0x02	; 2
+ 3a0:	80 e0       	ldi	r24, 0x00	; 0
+ 3a2:	c1 c0       	rjmp	.+386    	; 0x526 <MDIO_voidSetPinValue>
+ 3a4:	08 95       	ret
+
+000003a6 <HDCMotor_init>:
+
+/******************************************************************Implementation*****************************************/
+void HDCMotor_init(void)
+{
+	/*Make Direction With Output Direction*/
+	MDIO_voidSetPinDirection(DC_MOTOR_PORT_1_2 , MOTOR_1_FRONT , PIN_OUT_DIR);
+ 3a6:	41 e0       	ldi	r20, 0x01	; 1
+ 3a8:	60 e0       	ldi	r22, 0x00	; 0
+ 3aa:	80 e0       	ldi	r24, 0x00	; 0
+ 3ac:	43 d0       	rcall	.+134    	; 0x434 <MDIO_voidSetPinDirection>
+	MDIO_voidSetPinDirection(DC_MOTOR_PORT_1_2 , MOTOR_1_BACK , PIN_OUT_DIR);
+ 3ae:	41 e0       	ldi	r20, 0x01	; 1
+ 3b0:	61 e0       	ldi	r22, 0x01	; 1
+ 3b2:	80 e0       	ldi	r24, 0x00	; 0
+ 3b4:	3f d0       	rcall	.+126    	; 0x434 <MDIO_voidSetPinDirection>
+	
+	
+	MDIO_voidSetPinDirection(DC_MOTOR_PORT_3_4 , MOTOR_3_FRONT , PIN_OUT_DIR);
+ 3b6:	41 e0       	ldi	r20, 0x01	; 1
+ 3b8:	60 e0       	ldi	r22, 0x00	; 0
+ 3ba:	82 e0       	ldi	r24, 0x02	; 2
+ 3bc:	3b d0       	rcall	.+118    	; 0x434 <MDIO_voidSetPinDirection>
+	MDIO_voidSetPinDirection(DC_MOTOR_PORT_3_4 , MOTOR_3_BACK , PIN_OUT_DIR);
+ 3be:	41 e0       	ldi	r20, 0x01	; 1
+ 3c0:	61 e0       	ldi	r22, 0x01	; 1
+ 3c2:	82 e0       	ldi	r24, 0x02	; 2
+ 3c4:	37 c0       	rjmp	.+110    	; 0x434 <MDIO_voidSetPinDirection>
+ 3c6:	08 95       	ret
+
+000003c8 <HDCMOTOR_startForward>:
+
+
+void HDCMOTOR_startForward(void)
+{
+	
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_1_2 , MOTOR_1_FRONT , PIN_LOW_VALUE);
+ 3c8:	40 e0       	ldi	r20, 0x00	; 0
+ 3ca:	60 e0       	ldi	r22, 0x00	; 0
+ 3cc:	80 e0       	ldi	r24, 0x00	; 0
+ 3ce:	ab d0       	rcall	.+342    	; 0x526 <MDIO_voidSetPinValue>
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_1_2 , MOTOR_1_BACK , PIN_HIGH_VALUE);
+ 3d0:	41 e0       	ldi	r20, 0x01	; 1
+ 3d2:	61 e0       	ldi	r22, 0x01	; 1
+ 3d4:	80 e0       	ldi	r24, 0x00	; 0
+ 3d6:	a7 d0       	rcall	.+334    	; 0x526 <MDIO_voidSetPinValue>
+	
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_3_4 , MOTOR_3_FRONT , PIN_LOW_VALUE);
+ 3d8:	40 e0       	ldi	r20, 0x00	; 0
+ 3da:	60 e0       	ldi	r22, 0x00	; 0
+ 3dc:	82 e0       	ldi	r24, 0x02	; 2
+ 3de:	a3 d0       	rcall	.+326    	; 0x526 <MDIO_voidSetPinValue>
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_3_4 , MOTOR_3_BACK , PIN_HIGH_VALUE);
+ 3e0:	41 e0       	ldi	r20, 0x01	; 1
+ 3e2:	61 e0       	ldi	r22, 0x01	; 1
+ 3e4:	82 e0       	ldi	r24, 0x02	; 2
+ 3e6:	9f c0       	rjmp	.+318    	; 0x526 <MDIO_voidSetPinValue>
+ 3e8:	08 95       	ret
+
+000003ea <HDCMOTOR_stop>:
+}
+
+void HDCMOTOR_stop(void)
+{
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_1_2 , MOTOR_1_FRONT , PIN_LOW_VALUE);
+ 3ea:	40 e0       	ldi	r20, 0x00	; 0
+ 3ec:	60 e0       	ldi	r22, 0x00	; 0
+ 3ee:	80 e0       	ldi	r24, 0x00	; 0
+ 3f0:	9a d0       	rcall	.+308    	; 0x526 <MDIO_voidSetPinValue>
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_1_2 , MOTOR_1_BACK , PIN_LOW_VALUE);
+ 3f2:	40 e0       	ldi	r20, 0x00	; 0
+ 3f4:	61 e0       	ldi	r22, 0x01	; 1
+ 3f6:	80 e0       	ldi	r24, 0x00	; 0
+ 3f8:	96 d0       	rcall	.+300    	; 0x526 <MDIO_voidSetPinValue>
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_3_4 , MOTOR_3_FRONT , PIN_LOW_VALUE);
+ 3fa:	40 e0       	ldi	r20, 0x00	; 0
+ 3fc:	60 e0       	ldi	r22, 0x00	; 0
+ 3fe:	82 e0       	ldi	r24, 0x02	; 2
+ 400:	92 d0       	rcall	.+292    	; 0x526 <MDIO_voidSetPinValue>
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_3_4 , MOTOR_3_BACK , PIN_LOW_VALUE);
+ 402:	40 e0       	ldi	r20, 0x00	; 0
+ 404:	61 e0       	ldi	r22, 0x01	; 1
+ 406:	82 e0       	ldi	r24, 0x02	; 2
+ 408:	8e c0       	rjmp	.+284    	; 0x526 <MDIO_voidSetPinValue>
+ 40a:	08 95       	ret
+
+0000040c <HDCMOTOR_Rotate>:
+	
+}
+
+void HDCMOTOR_Rotate(void)
+{
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_1_2 , MOTOR_1_FRONT , PIN_HIGH_VALUE);
+ 40c:	41 e0       	ldi	r20, 0x01	; 1
+ 40e:	60 e0       	ldi	r22, 0x00	; 0
+ 410:	80 e0       	ldi	r24, 0x00	; 0
+ 412:	89 d0       	rcall	.+274    	; 0x526 <MDIO_voidSetPinValue>
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_1_2 , MOTOR_1_BACK , PIN_LOW_VALUE);
+ 414:	40 e0       	ldi	r20, 0x00	; 0
+ 416:	61 e0       	ldi	r22, 0x01	; 1
+ 418:	80 e0       	ldi	r24, 0x00	; 0
+ 41a:	85 d0       	rcall	.+266    	; 0x526 <MDIO_voidSetPinValue>
+	
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_3_4 , MOTOR_3_FRONT , PIN_LOW_VALUE);
+ 41c:	40 e0       	ldi	r20, 0x00	; 0
+ 41e:	60 e0       	ldi	r22, 0x00	; 0
+ 420:	82 e0       	ldi	r24, 0x02	; 2
+ 422:	81 d0       	rcall	.+258    	; 0x526 <MDIO_voidSetPinValue>
+	MDIO_voidSetPinValue(DC_MOTOR_PORT_3_4 , MOTOR_3_BACK , PIN_LOW_VALUE);
+ 424:	40 e0       	ldi	r20, 0x00	; 0
+ 426:	61 e0       	ldi	r22, 0x01	; 1
+ 428:	82 e0       	ldi	r24, 0x02	; 2
+ 42a:	7d c0       	rjmp	.+250    	; 0x526 <MDIO_voidSetPinValue>
+ 42c:	08 95       	ret
+
+0000042e <main>:
+int main(void)
+{ 
+    //MDIO_voidSetPinDirection(PORTB, PIN0, PIN_OUT_DIR);
+	//MTIMER0_voidInit();
+	
+	initCar();
+ 42e:	da de       	rcall	.-588    	; 0x1e4 <initCar>
+	
+    /* Replace with your application code */
+    while (1) 
+    {
+	//MTIMER0_voidsetCallBackOVF(Toggle_LedOVF);
+		carApp();
+ 430:	f3 de       	rcall	.-538    	; 0x218 <carApp>
+ 432:	fe cf       	rjmp	.-4      	; 0x430 <main+0x2>
+
+00000434 <MDIO_voidSetPinDirection>:
+ 434:	81 30       	cpi	r24, 0x01	; 1
+		default:
+		break;
+	}
+	return Local_u8Data;
+
+}
+ 436:	19 f1       	breq	.+70     	; 0x47e <MDIO_voidSetPinDirection+0x4a>
+ 438:	30 f0       	brcs	.+12     	; 0x446 <MDIO_voidSetPinDirection+0x12>
+ 43a:	82 30       	cpi	r24, 0x02	; 2
+ 43c:	e1 f1       	breq	.+120    	; 0x4b6 <MDIO_voidSetPinDirection+0x82>
+ 43e:	83 30       	cpi	r24, 0x03	; 3
+ 440:	09 f4       	brne	.+2      	; 0x444 <MDIO_voidSetPinDirection+0x10>
+ 442:	55 c0       	rjmp	.+170    	; 0x4ee <MDIO_voidSetPinDirection+0xba>
+ 444:	08 95       	ret
+ 446:	44 23       	and	r20, r20
+ 448:	19 f0       	breq	.+6      	; 0x450 <MDIO_voidSetPinDirection+0x1c>
+ 44a:	41 30       	cpi	r20, 0x01	; 1
+ 44c:	69 f0       	breq	.+26     	; 0x468 <MDIO_voidSetPinDirection+0x34>
+ 44e:	08 95       	ret
+ 450:	2a b3       	in	r18, 0x1a	; 26
+ 452:	81 e0       	ldi	r24, 0x01	; 1
+ 454:	90 e0       	ldi	r25, 0x00	; 0
+ 456:	02 c0       	rjmp	.+4      	; 0x45c <MDIO_voidSetPinDirection+0x28>
+ 458:	88 0f       	add	r24, r24
+ 45a:	99 1f       	adc	r25, r25
+ 45c:	6a 95       	dec	r22
+ 45e:	e2 f7       	brpl	.-8      	; 0x458 <MDIO_voidSetPinDirection+0x24>
+ 460:	80 95       	com	r24
+ 462:	82 23       	and	r24, r18
+ 464:	8a bb       	out	0x1a, r24	; 26
+ 466:	08 95       	ret
+ 468:	2a b3       	in	r18, 0x1a	; 26
+ 46a:	81 e0       	ldi	r24, 0x01	; 1
+ 46c:	90 e0       	ldi	r25, 0x00	; 0
+ 46e:	02 c0       	rjmp	.+4      	; 0x474 <MDIO_voidSetPinDirection+0x40>
+ 470:	88 0f       	add	r24, r24
+ 472:	99 1f       	adc	r25, r25
+ 474:	6a 95       	dec	r22
+ 476:	e2 f7       	brpl	.-8      	; 0x470 <MDIO_voidSetPinDirection+0x3c>
+ 478:	82 2b       	or	r24, r18
+ 47a:	8a bb       	out	0x1a, r24	; 26
+ 47c:	08 95       	ret
+ 47e:	44 23       	and	r20, r20
+ 480:	19 f0       	breq	.+6      	; 0x488 <MDIO_voidSetPinDirection+0x54>
+ 482:	41 30       	cpi	r20, 0x01	; 1
+ 484:	69 f0       	breq	.+26     	; 0x4a0 <MDIO_voidSetPinDirection+0x6c>
+ 486:	08 95       	ret
+ 488:	27 b3       	in	r18, 0x17	; 23
+ 48a:	81 e0       	ldi	r24, 0x01	; 1
+ 48c:	90 e0       	ldi	r25, 0x00	; 0
+ 48e:	02 c0       	rjmp	.+4      	; 0x494 <MDIO_voidSetPinDirection+0x60>
+ 490:	88 0f       	add	r24, r24
+ 492:	99 1f       	adc	r25, r25
+ 494:	6a 95       	dec	r22
+ 496:	e2 f7       	brpl	.-8      	; 0x490 <MDIO_voidSetPinDirection+0x5c>
+ 498:	80 95       	com	r24
+ 49a:	82 23       	and	r24, r18
+ 49c:	87 bb       	out	0x17, r24	; 23
+ 49e:	08 95       	ret
+ 4a0:	27 b3       	in	r18, 0x17	; 23
+ 4a2:	81 e0       	ldi	r24, 0x01	; 1
+ 4a4:	90 e0       	ldi	r25, 0x00	; 0
+ 4a6:	02 c0       	rjmp	.+4      	; 0x4ac <MDIO_voidSetPinDirection+0x78>
+ 4a8:	88 0f       	add	r24, r24
+ 4aa:	99 1f       	adc	r25, r25
+ 4ac:	6a 95       	dec	r22
+ 4ae:	e2 f7       	brpl	.-8      	; 0x4a8 <MDIO_voidSetPinDirection+0x74>
+ 4b0:	82 2b       	or	r24, r18
+ 4b2:	87 bb       	out	0x17, r24	; 23
+ 4b4:	08 95       	ret
+ 4b6:	44 23       	and	r20, r20
+ 4b8:	19 f0       	breq	.+6      	; 0x4c0 <MDIO_voidSetPinDirection+0x8c>
+ 4ba:	41 30       	cpi	r20, 0x01	; 1
+ 4bc:	69 f0       	breq	.+26     	; 0x4d8 <MDIO_voidSetPinDirection+0xa4>
+ 4be:	08 95       	ret
+ 4c0:	24 b3       	in	r18, 0x14	; 20
+ 4c2:	81 e0       	ldi	r24, 0x01	; 1
+ 4c4:	90 e0       	ldi	r25, 0x00	; 0
+ 4c6:	02 c0       	rjmp	.+4      	; 0x4cc <MDIO_voidSetPinDirection+0x98>
+ 4c8:	88 0f       	add	r24, r24
+ 4ca:	99 1f       	adc	r25, r25
+ 4cc:	6a 95       	dec	r22
+ 4ce:	e2 f7       	brpl	.-8      	; 0x4c8 <MDIO_voidSetPinDirection+0x94>
+ 4d0:	80 95       	com	r24
+ 4d2:	82 23       	and	r24, r18
+ 4d4:	84 bb       	out	0x14, r24	; 20
+ 4d6:	08 95       	ret
+ 4d8:	24 b3       	in	r18, 0x14	; 20
+ 4da:	81 e0       	ldi	r24, 0x01	; 1
+ 4dc:	90 e0       	ldi	r25, 0x00	; 0
+ 4de:	02 c0       	rjmp	.+4      	; 0x4e4 <MDIO_voidSetPinDirection+0xb0>
+ 4e0:	88 0f       	add	r24, r24
+ 4e2:	99 1f       	adc	r25, r25
+ 4e4:	6a 95       	dec	r22
+ 4e6:	e2 f7       	brpl	.-8      	; 0x4e0 <MDIO_voidSetPinDirection+0xac>
+ 4e8:	82 2b       	or	r24, r18
+ 4ea:	84 bb       	out	0x14, r24	; 20
+ 4ec:	08 95       	ret
+ 4ee:	44 23       	and	r20, r20
+ 4f0:	19 f0       	breq	.+6      	; 0x4f8 <MDIO_voidSetPinDirection+0xc4>
+ 4f2:	41 30       	cpi	r20, 0x01	; 1
+ 4f4:	69 f0       	breq	.+26     	; 0x510 <MDIO_voidSetPinDirection+0xdc>
+ 4f6:	08 95       	ret
+ 4f8:	21 b3       	in	r18, 0x11	; 17
+ 4fa:	81 e0       	ldi	r24, 0x01	; 1
+ 4fc:	90 e0       	ldi	r25, 0x00	; 0
+ 4fe:	02 c0       	rjmp	.+4      	; 0x504 <MDIO_voidSetPinDirection+0xd0>
+ 500:	88 0f       	add	r24, r24
+ 502:	99 1f       	adc	r25, r25
+ 504:	6a 95       	dec	r22
+ 506:	e2 f7       	brpl	.-8      	; 0x500 <MDIO_voidSetPinDirection+0xcc>
+ 508:	80 95       	com	r24
+ 50a:	82 23       	and	r24, r18
+ 50c:	81 bb       	out	0x11, r24	; 17
+ 50e:	08 95       	ret
+ 510:	21 b3       	in	r18, 0x11	; 17
+ 512:	81 e0       	ldi	r24, 0x01	; 1
+ 514:	90 e0       	ldi	r25, 0x00	; 0
+ 516:	02 c0       	rjmp	.+4      	; 0x51c <MDIO_voidSetPinDirection+0xe8>
+ 518:	88 0f       	add	r24, r24
+ 51a:	99 1f       	adc	r25, r25
+ 51c:	6a 95       	dec	r22
+ 51e:	e2 f7       	brpl	.-8      	; 0x518 <MDIO_voidSetPinDirection+0xe4>
+ 520:	82 2b       	or	r24, r18
+ 522:	81 bb       	out	0x11, r24	; 17
+ 524:	08 95       	ret
+
+00000526 <MDIO_voidSetPinValue>:
+ 526:	81 30       	cpi	r24, 0x01	; 1
+ 528:	19 f1       	breq	.+70     	; 0x570 <MDIO_voidSetPinValue+0x4a>
+ 52a:	30 f0       	brcs	.+12     	; 0x538 <MDIO_voidSetPinValue+0x12>
+ 52c:	82 30       	cpi	r24, 0x02	; 2
+ 52e:	e1 f1       	breq	.+120    	; 0x5a8 <MDIO_voidSetPinValue+0x82>
+ 530:	83 30       	cpi	r24, 0x03	; 3
+ 532:	09 f4       	brne	.+2      	; 0x536 <MDIO_voidSetPinValue+0x10>
+ 534:	55 c0       	rjmp	.+170    	; 0x5e0 <MDIO_voidSetPinValue+0xba>
+ 536:	08 95       	ret
+ 538:	44 23       	and	r20, r20
+ 53a:	19 f0       	breq	.+6      	; 0x542 <MDIO_voidSetPinValue+0x1c>
+ 53c:	41 30       	cpi	r20, 0x01	; 1
+ 53e:	69 f0       	breq	.+26     	; 0x55a <MDIO_voidSetPinValue+0x34>
+ 540:	08 95       	ret
+ 542:	2b b3       	in	r18, 0x1b	; 27
+ 544:	81 e0       	ldi	r24, 0x01	; 1
+ 546:	90 e0       	ldi	r25, 0x00	; 0
+ 548:	02 c0       	rjmp	.+4      	; 0x54e <MDIO_voidSetPinValue+0x28>
+ 54a:	88 0f       	add	r24, r24
+ 54c:	99 1f       	adc	r25, r25
+ 54e:	6a 95       	dec	r22
+ 550:	e2 f7       	brpl	.-8      	; 0x54a <MDIO_voidSetPinValue+0x24>
+ 552:	80 95       	com	r24
+ 554:	82 23       	and	r24, r18
+ 556:	8b bb       	out	0x1b, r24	; 27
+ 558:	08 95       	ret
+ 55a:	2b b3       	in	r18, 0x1b	; 27
+ 55c:	81 e0       	ldi	r24, 0x01	; 1
+ 55e:	90 e0       	ldi	r25, 0x00	; 0
+ 560:	02 c0       	rjmp	.+4      	; 0x566 <MDIO_voidSetPinValue+0x40>
+ 562:	88 0f       	add	r24, r24
+ 564:	99 1f       	adc	r25, r25
+ 566:	6a 95       	dec	r22
+ 568:	e2 f7       	brpl	.-8      	; 0x562 <MDIO_voidSetPinValue+0x3c>
+ 56a:	82 2b       	or	r24, r18
+ 56c:	8b bb       	out	0x1b, r24	; 27
+ 56e:	08 95       	ret
+ 570:	44 23       	and	r20, r20
+ 572:	19 f0       	breq	.+6      	; 0x57a <MDIO_voidSetPinValue+0x54>
+ 574:	41 30       	cpi	r20, 0x01	; 1
+ 576:	69 f0       	breq	.+26     	; 0x592 <MDIO_voidSetPinValue+0x6c>
+ 578:	08 95       	ret
+ 57a:	28 b3       	in	r18, 0x18	; 24
+ 57c:	81 e0       	ldi	r24, 0x01	; 1
+ 57e:	90 e0       	ldi	r25, 0x00	; 0
+ 580:	02 c0       	rjmp	.+4      	; 0x586 <MDIO_voidSetPinValue+0x60>
+ 582:	88 0f       	add	r24, r24
+ 584:	99 1f       	adc	r25, r25
+ 586:	6a 95       	dec	r22
+ 588:	e2 f7       	brpl	.-8      	; 0x582 <MDIO_voidSetPinValue+0x5c>
+ 58a:	80 95       	com	r24
+ 58c:	82 23       	and	r24, r18
+ 58e:	88 bb       	out	0x18, r24	; 24
+ 590:	08 95       	ret
+ 592:	28 b3       	in	r18, 0x18	; 24
+ 594:	81 e0       	ldi	r24, 0x01	; 1
+ 596:	90 e0       	ldi	r25, 0x00	; 0
+ 598:	02 c0       	rjmp	.+4      	; 0x59e <MDIO_voidSetPinValue+0x78>
+ 59a:	88 0f       	add	r24, r24
+ 59c:	99 1f       	adc	r25, r25
+ 59e:	6a 95       	dec	r22
+ 5a0:	e2 f7       	brpl	.-8      	; 0x59a <MDIO_voidSetPinValue+0x74>
+ 5a2:	82 2b       	or	r24, r18
+ 5a4:	88 bb       	out	0x18, r24	; 24
+ 5a6:	08 95       	ret
+ 5a8:	44 23       	and	r20, r20
+ 5aa:	19 f0       	breq	.+6      	; 0x5b2 <MDIO_voidSetPinValue+0x8c>
+ 5ac:	41 30       	cpi	r20, 0x01	; 1
+ 5ae:	69 f0       	breq	.+26     	; 0x5ca <MDIO_voidSetPinValue+0xa4>
+ 5b0:	08 95       	ret
+ 5b2:	25 b3       	in	r18, 0x15	; 21
+ 5b4:	81 e0       	ldi	r24, 0x01	; 1
+ 5b6:	90 e0       	ldi	r25, 0x00	; 0
+ 5b8:	02 c0       	rjmp	.+4      	; 0x5be <MDIO_voidSetPinValue+0x98>
+ 5ba:	88 0f       	add	r24, r24
+ 5bc:	99 1f       	adc	r25, r25
+ 5be:	6a 95       	dec	r22
+ 5c0:	e2 f7       	brpl	.-8      	; 0x5ba <MDIO_voidSetPinValue+0x94>
+ 5c2:	80 95       	com	r24
+ 5c4:	82 23       	and	r24, r18
+ 5c6:	85 bb       	out	0x15, r24	; 21
+ 5c8:	08 95       	ret
+ 5ca:	25 b3       	in	r18, 0x15	; 21
+ 5cc:	81 e0       	ldi	r24, 0x01	; 1
+ 5ce:	90 e0       	ldi	r25, 0x00	; 0
+ 5d0:	02 c0       	rjmp	.+4      	; 0x5d6 <MDIO_voidSetPinValue+0xb0>
+ 5d2:	88 0f       	add	r24, r24
+ 5d4:	99 1f       	adc	r25, r25
+ 5d6:	6a 95       	dec	r22
+ 5d8:	e2 f7       	brpl	.-8      	; 0x5d2 <MDIO_voidSetPinValue+0xac>
+ 5da:	82 2b       	or	r24, r18
+ 5dc:	85 bb       	out	0x15, r24	; 21
+ 5de:	08 95       	ret
+ 5e0:	44 23       	and	r20, r20
+ 5e2:	19 f0       	breq	.+6      	; 0x5ea <MDIO_voidSetPinValue+0xc4>
+ 5e4:	41 30       	cpi	r20, 0x01	; 1
+ 5e6:	69 f0       	breq	.+26     	; 0x602 <MDIO_voidSetPinValue+0xdc>
+ 5e8:	08 95       	ret
+ 5ea:	22 b3       	in	r18, 0x12	; 18
+ 5ec:	81 e0       	ldi	r24, 0x01	; 1
+ 5ee:	90 e0       	ldi	r25, 0x00	; 0
+ 5f0:	02 c0       	rjmp	.+4      	; 0x5f6 <MDIO_voidSetPinValue+0xd0>
+ 5f2:	88 0f       	add	r24, r24
+ 5f4:	99 1f       	adc	r25, r25
+ 5f6:	6a 95       	dec	r22
+ 5f8:	e2 f7       	brpl	.-8      	; 0x5f2 <MDIO_voidSetPinValue+0xcc>
+ 5fa:	80 95       	com	r24
+ 5fc:	82 23       	and	r24, r18
+ 5fe:	82 bb       	out	0x12, r24	; 18
+ 600:	08 95       	ret
+ 602:	22 b3       	in	r18, 0x12	; 18
+ 604:	81 e0       	ldi	r24, 0x01	; 1
+ 606:	90 e0       	ldi	r25, 0x00	; 0
+ 608:	02 c0       	rjmp	.+4      	; 0x60e <MDIO_voidSetPinValue+0xe8>
+ 60a:	88 0f       	add	r24, r24
+ 60c:	99 1f       	adc	r25, r25
+ 60e:	6a 95       	dec	r22
+ 610:	e2 f7       	brpl	.-8      	; 0x60a <MDIO_voidSetPinValue+0xe4>
+ 612:	82 2b       	or	r24, r18
+ 614:	82 bb       	out	0x12, r24	; 18
+ 616:	08 95       	ret
+
+00000618 <MDIO_VoidSetPullupResistor>:
+
+
+void  MDIO_VoidSetPullupResistor  (u8 Copy_u8Port , u8 Copy_u8Pin)
+{
+	switch(Copy_u8Port)
+ 618:	81 30       	cpi	r24, 0x01	; 1
+ 61a:	89 f0       	breq	.+34     	; 0x63e <MDIO_VoidSetPullupResistor+0x26>
+ 61c:	28 f0       	brcs	.+10     	; 0x628 <MDIO_VoidSetPullupResistor+0x10>
+ 61e:	82 30       	cpi	r24, 0x02	; 2
+ 620:	c9 f0       	breq	.+50     	; 0x654 <MDIO_VoidSetPullupResistor+0x3c>
+ 622:	83 30       	cpi	r24, 0x03	; 3
+ 624:	11 f1       	breq	.+68     	; 0x66a <MDIO_VoidSetPullupResistor+0x52>
+ 626:	08 95       	ret
+	{
+		case PORTA :
+		SET_BIT(MDIO_PORTA , Copy_u8Pin);
+ 628:	2b b3       	in	r18, 0x1b	; 27
+ 62a:	81 e0       	ldi	r24, 0x01	; 1
+ 62c:	90 e0       	ldi	r25, 0x00	; 0
+ 62e:	02 c0       	rjmp	.+4      	; 0x634 <MDIO_VoidSetPullupResistor+0x1c>
+ 630:	88 0f       	add	r24, r24
+ 632:	99 1f       	adc	r25, r25
+ 634:	6a 95       	dec	r22
+ 636:	e2 f7       	brpl	.-8      	; 0x630 <MDIO_VoidSetPullupResistor+0x18>
+ 638:	82 2b       	or	r24, r18
+ 63a:	8b bb       	out	0x1b, r24	; 27
+		break;
+ 63c:	08 95       	ret
+		
+		case PORTB :
+		SET_BIT(MDIO_PORTB , Copy_u8Pin);
+ 63e:	28 b3       	in	r18, 0x18	; 24
+ 640:	81 e0       	ldi	r24, 0x01	; 1
+ 642:	90 e0       	ldi	r25, 0x00	; 0
+ 644:	02 c0       	rjmp	.+4      	; 0x64a <MDIO_VoidSetPullupResistor+0x32>
+ 646:	88 0f       	add	r24, r24
+ 648:	99 1f       	adc	r25, r25
+ 64a:	6a 95       	dec	r22
+ 64c:	e2 f7       	brpl	.-8      	; 0x646 <MDIO_VoidSetPullupResistor+0x2e>
+ 64e:	82 2b       	or	r24, r18
+ 650:	88 bb       	out	0x18, r24	; 24
+		break;
+ 652:	08 95       	ret
+		
+		case PORTC :
+		SET_BIT(MDIO_PORTC , Copy_u8Pin);
+ 654:	25 b3       	in	r18, 0x15	; 21
+ 656:	81 e0       	ldi	r24, 0x01	; 1
+ 658:	90 e0       	ldi	r25, 0x00	; 0
+ 65a:	02 c0       	rjmp	.+4      	; 0x660 <MDIO_VoidSetPullupResistor+0x48>
+ 65c:	88 0f       	add	r24, r24
+ 65e:	99 1f       	adc	r25, r25
+ 660:	6a 95       	dec	r22
+ 662:	e2 f7       	brpl	.-8      	; 0x65c <MDIO_VoidSetPullupResistor+0x44>
+ 664:	82 2b       	or	r24, r18
+ 666:	85 bb       	out	0x15, r24	; 21
+		break;
+ 668:	08 95       	ret
+		
+		case PORTD :
+		SET_BIT(MDIO_PORTD , Copy_u8Pin);
+ 66a:	22 b3       	in	r18, 0x12	; 18
+ 66c:	81 e0       	ldi	r24, 0x01	; 1
+ 66e:	90 e0       	ldi	r25, 0x00	; 0
+ 670:	02 c0       	rjmp	.+4      	; 0x676 <MDIO_VoidSetPullupResistor+0x5e>
+ 672:	88 0f       	add	r24, r24
+ 674:	99 1f       	adc	r25, r25
+ 676:	6a 95       	dec	r22
+ 678:	e2 f7       	brpl	.-8      	; 0x672 <MDIO_VoidSetPullupResistor+0x5a>
+ 67a:	82 2b       	or	r24, r18
+ 67c:	82 bb       	out	0x12, r24	; 18
+ 67e:	08 95       	ret
+
+00000680 <EXTINT_init>:
+EN_EXTINT_ERROR SET_GLOBAL_INTERRUPT(EN_GLOBAL_INT state)
+{
+	
+	if(state == ENABLE)
+	{
+		sei();
+ 680:	78 94       	sei
+
+EN_EXTINT_ERROR EXTINT_init(EN_EXINT_NUMBER INTx ,EN_Sense_Control INTxSense)
+{
+	
+	SET_GLOBAL_INTERRUPT(ENABLE); // SET GLOBAL INTERRUPT
+	switch(INTx)
+ 682:	81 30       	cpi	r24, 0x01	; 1
+ 684:	89 f1       	breq	.+98     	; 0x6e8 <EXTINT_init+0x68>
+ 686:	20 f0       	brcs	.+8      	; 0x690 <EXTINT_init+0x10>
+ 688:	82 30       	cpi	r24, 0x02	; 2
+ 68a:	09 f4       	brne	.+2      	; 0x68e <EXTINT_init+0xe>
+ 68c:	59 c0       	rjmp	.+178    	; 0x740 <EXTINT_init+0xc0>
+ 68e:	6c c0       	rjmp	.+216    	; 0x768 <EXTINT_init+0xe8>
+	{
+		case EXTINT0:
+		  if(INTxSense == LOW_LEVEL)
+ 690:	61 11       	cpse	r22, r1
+ 692:	07 c0       	rjmp	.+14     	; 0x6a2 <EXTINT_init+0x22>
+		  {
+			  CLEAR_BIT(MCUCR,ISC00);
+ 694:	85 b7       	in	r24, 0x35	; 53
+ 696:	8e 7f       	andi	r24, 0xFE	; 254
+ 698:	85 bf       	out	0x35, r24	; 53
+			  CLEAR_BIT(MCUCR,ISC01);
+ 69a:	85 b7       	in	r24, 0x35	; 53
+ 69c:	8d 7f       	andi	r24, 0xFD	; 253
+ 69e:	85 bf       	out	0x35, r24	; 53
+ 6a0:	1e c0       	rjmp	.+60     	; 0x6de <EXTINT_init+0x5e>
+		  }
+		  else if(INTxSense == FALLING_EDGE)
+ 6a2:	61 30       	cpi	r22, 0x01	; 1
+ 6a4:	39 f4       	brne	.+14     	; 0x6b4 <EXTINT_init+0x34>
+		  {
+			  CLEAR_BIT(MCUCR,ISC00);
+ 6a6:	85 b7       	in	r24, 0x35	; 53
+ 6a8:	8e 7f       	andi	r24, 0xFE	; 254
+ 6aa:	85 bf       	out	0x35, r24	; 53
+			  SET_BIT(MCUCR,ISC01);
+ 6ac:	85 b7       	in	r24, 0x35	; 53
+ 6ae:	82 60       	ori	r24, 0x02	; 2
+ 6b0:	85 bf       	out	0x35, r24	; 53
+ 6b2:	15 c0       	rjmp	.+42     	; 0x6de <EXTINT_init+0x5e>
+		  }
+		  else if(INTxSense == RISING_EDGE)
+ 6b4:	62 30       	cpi	r22, 0x02	; 2
+ 6b6:	39 f4       	brne	.+14     	; 0x6c6 <EXTINT_init+0x46>
+		  {
+			  SET_BIT(MCUCR,ISC00);
+ 6b8:	85 b7       	in	r24, 0x35	; 53
+ 6ba:	81 60       	ori	r24, 0x01	; 1
+ 6bc:	85 bf       	out	0x35, r24	; 53
+			  SET_BIT(MCUCR,ISC01);
+ 6be:	85 b7       	in	r24, 0x35	; 53
+ 6c0:	82 60       	ori	r24, 0x02	; 2
+ 6c2:	85 bf       	out	0x35, r24	; 53
+ 6c4:	0c c0       	rjmp	.+24     	; 0x6de <EXTINT_init+0x5e>
+		  }
+		  else if(INTxSense == ANY_LOGICAL_CHANGE)
+ 6c6:	63 30       	cpi	r22, 0x03	; 3
+ 6c8:	39 f4       	brne	.+14     	; 0x6d8 <EXTINT_init+0x58>
+		  {
+			  SET_BIT(MCUCR,ISC00);
+ 6ca:	85 b7       	in	r24, 0x35	; 53
+ 6cc:	81 60       	ori	r24, 0x01	; 1
+ 6ce:	85 bf       	out	0x35, r24	; 53
+			  CLEAR_BIT(MCUCR,ISC01);
+ 6d0:	85 b7       	in	r24, 0x35	; 53
+ 6d2:	8d 7f       	andi	r24, 0xFD	; 253
+ 6d4:	85 bf       	out	0x35, r24	; 53
+ 6d6:	03 c0       	rjmp	.+6      	; 0x6de <EXTINT_init+0x5e>
+	{
+		sei();
+	}
+    else if (state == DISABLE)
+	{
+		cli();
+ 6d8:	f8 94       	cli
+			  CLEAR_BIT(MCUCR,ISC01);
+		  }
+		  else   // handle sense option error
+		  {
+			  SET_GLOBAL_INTERRUPT(DISABLE);
+			   return EXTINT_NOT_OK;
+ 6da:	81 e0       	ldi	r24, 0x01	; 1
+ 6dc:	08 95       	ret
+		  }	   
+		  SET_BIT(GICR,INT0); //Enable External INT0  (PIE)
+ 6de:	8b b7       	in	r24, 0x3b	; 59
+ 6e0:	80 64       	ori	r24, 0x40	; 64
+ 6e2:	8b bf       	out	0x3b, r24	; 59
+		default: // handle wrong Choose for EXT Interrupt Number
+		  SET_GLOBAL_INTERRUPT(DISABLE);
+		  return EXTINT_NOT_OK;
+		  break;
+	}
+	return EXTINT_OK;
+ 6e4:	80 e0       	ldi	r24, 0x00	; 0
+		  {
+			  SET_GLOBAL_INTERRUPT(DISABLE);
+			   return EXTINT_NOT_OK;
+		  }	   
+		  SET_BIT(GICR,INT0); //Enable External INT0  (PIE)
+		  break;
+ 6e6:	08 95       	ret
+		  
+		case EXTINT1:
+		  if(INTxSense == LOW_LEVEL)
+ 6e8:	61 11       	cpse	r22, r1
+ 6ea:	07 c0       	rjmp	.+14     	; 0x6fa <EXTINT_init+0x7a>
+		  {
+			  CLEAR_BIT(MCUCR,ISC10);
+ 6ec:	85 b7       	in	r24, 0x35	; 53
+ 6ee:	8b 7f       	andi	r24, 0xFB	; 251
+ 6f0:	85 bf       	out	0x35, r24	; 53
+			  CLEAR_BIT(MCUCR,ISC11);
+ 6f2:	85 b7       	in	r24, 0x35	; 53
+ 6f4:	87 7f       	andi	r24, 0xF7	; 247
+ 6f6:	85 bf       	out	0x35, r24	; 53
+ 6f8:	1e c0       	rjmp	.+60     	; 0x736 <EXTINT_init+0xb6>
+		  }
+		  else if(INTxSense == FALLING_EDGE)
+ 6fa:	61 30       	cpi	r22, 0x01	; 1
+ 6fc:	39 f4       	brne	.+14     	; 0x70c <EXTINT_init+0x8c>
+		  {
+			  CLEAR_BIT(MCUCR,ISC10);
+ 6fe:	85 b7       	in	r24, 0x35	; 53
+ 700:	8b 7f       	andi	r24, 0xFB	; 251
+ 702:	85 bf       	out	0x35, r24	; 53
+			  SET_BIT(MCUCR,ISC11);
+ 704:	85 b7       	in	r24, 0x35	; 53
+ 706:	88 60       	ori	r24, 0x08	; 8
+ 708:	85 bf       	out	0x35, r24	; 53
+ 70a:	15 c0       	rjmp	.+42     	; 0x736 <EXTINT_init+0xb6>
+		  }
+		  else if(INTxSense == RISING_EDGE)
+ 70c:	62 30       	cpi	r22, 0x02	; 2
+ 70e:	39 f4       	brne	.+14     	; 0x71e <EXTINT_init+0x9e>
+		  {
+			  SET_BIT(MCUCR,ISC10);
+ 710:	85 b7       	in	r24, 0x35	; 53
+ 712:	84 60       	ori	r24, 0x04	; 4
+ 714:	85 bf       	out	0x35, r24	; 53
+			  SET_BIT(MCUCR,ISC11);
+ 716:	85 b7       	in	r24, 0x35	; 53
+ 718:	88 60       	ori	r24, 0x08	; 8
+ 71a:	85 bf       	out	0x35, r24	; 53
+ 71c:	0c c0       	rjmp	.+24     	; 0x736 <EXTINT_init+0xb6>
+		  }
+		  else if(INTxSense == ANY_LOGICAL_CHANGE)
+ 71e:	63 30       	cpi	r22, 0x03	; 3
+ 720:	39 f4       	brne	.+14     	; 0x730 <EXTINT_init+0xb0>
+		  {
+			  SET_BIT(MCUCR,ISC10);
+ 722:	85 b7       	in	r24, 0x35	; 53
+ 724:	84 60       	ori	r24, 0x04	; 4
+ 726:	85 bf       	out	0x35, r24	; 53
+			  CLEAR_BIT(MCUCR,ISC11);
+ 728:	85 b7       	in	r24, 0x35	; 53
+ 72a:	87 7f       	andi	r24, 0xF7	; 247
+ 72c:	85 bf       	out	0x35, r24	; 53
+ 72e:	03 c0       	rjmp	.+6      	; 0x736 <EXTINT_init+0xb6>
+	{
+		sei();
+	}
+    else if (state == DISABLE)
+	{
+		cli();
+ 730:	f8 94       	cli
+			  CLEAR_BIT(MCUCR,ISC11);
+		  }
+		  else   // handle sense option error
+		  {
+		 	 SET_GLOBAL_INTERRUPT(DISABLE);
+		 	 return EXTINT_NOT_OK;
+ 732:	81 e0       	ldi	r24, 0x01	; 1
+ 734:	08 95       	ret
+		  }
+		  SET_BIT(GICR,INT1); //Enable External INT1  (PIE)
+ 736:	8b b7       	in	r24, 0x3b	; 59
+ 738:	80 68       	ori	r24, 0x80	; 128
+ 73a:	8b bf       	out	0x3b, r24	; 59
+		default: // handle wrong Choose for EXT Interrupt Number
+		  SET_GLOBAL_INTERRUPT(DISABLE);
+		  return EXTINT_NOT_OK;
+		  break;
+	}
+	return EXTINT_OK;
+ 73c:	80 e0       	ldi	r24, 0x00	; 0
+		  {
+		 	 SET_GLOBAL_INTERRUPT(DISABLE);
+		 	 return EXTINT_NOT_OK;
+		  }
+		  SET_BIT(GICR,INT1); //Enable External INT1  (PIE)
+		  break;
+ 73e:	08 95       	ret
+		  
+		case EXTINT2:
+		  if(INTxSense == FALLING_EDGE)
+ 740:	61 30       	cpi	r22, 0x01	; 1
+ 742:	21 f4       	brne	.+8      	; 0x74c <EXTINT_init+0xcc>
+		  {
+			  CLEAR_BIT(MCUCSR,ISC2);
+ 744:	84 b7       	in	r24, 0x34	; 52
+ 746:	8f 7b       	andi	r24, 0xBF	; 191
+ 748:	84 bf       	out	0x34, r24	; 52
+ 74a:	09 c0       	rjmp	.+18     	; 0x75e <EXTINT_init+0xde>
+		  }
+		  else if(INTxSense == RISING_EDGE)
+ 74c:	62 30       	cpi	r22, 0x02	; 2
+ 74e:	21 f4       	brne	.+8      	; 0x758 <EXTINT_init+0xd8>
+		  {
+			  SET_BIT(MCUCSR,ISC2);
+ 750:	84 b7       	in	r24, 0x34	; 52
+ 752:	80 64       	ori	r24, 0x40	; 64
+ 754:	84 bf       	out	0x34, r24	; 52
+ 756:	03 c0       	rjmp	.+6      	; 0x75e <EXTINT_init+0xde>
+	{
+		sei();
+	}
+    else if (state == DISABLE)
+	{
+		cli();
+ 758:	f8 94       	cli
+			  SET_BIT(MCUCSR,ISC2);
+		  }
+		  else   // handle sense option error
+		  {
+		 	 SET_GLOBAL_INTERRUPT(DISABLE);
+		 	 return EXTINT_NOT_OK;
+ 75a:	81 e0       	ldi	r24, 0x01	; 1
+ 75c:	08 95       	ret
+		  }
+		  SET_BIT(GICR,INT2); //Enable External INT1  (PIE)
+ 75e:	8b b7       	in	r24, 0x3b	; 59
+ 760:	80 62       	ori	r24, 0x20	; 32
+ 762:	8b bf       	out	0x3b, r24	; 59
+		default: // handle wrong Choose for EXT Interrupt Number
+		  SET_GLOBAL_INTERRUPT(DISABLE);
+		  return EXTINT_NOT_OK;
+		  break;
+	}
+	return EXTINT_OK;
+ 764:	80 e0       	ldi	r24, 0x00	; 0
+		  {
+		 	 SET_GLOBAL_INTERRUPT(DISABLE);
+		 	 return EXTINT_NOT_OK;
+		  }
+		  SET_BIT(GICR,INT2); //Enable External INT1  (PIE)
+		  break;
+ 766:	08 95       	ret
+	{
+		sei();
+	}
+    else if (state == DISABLE)
+	{
+		cli();
+ 768:	f8 94       	cli
+		  SET_BIT(GICR,INT2); //Enable External INT1  (PIE)
+		  break;
+		  
+		default: // handle wrong Choose for EXT Interrupt Number
+		  SET_GLOBAL_INTERRUPT(DISABLE);
+		  return EXTINT_NOT_OK;
+ 76a:	81 e0       	ldi	r24, 0x01	; 1
+		  break;
+	}
+	return EXTINT_OK;
+}
+ 76c:	08 95       	ret
+
+0000076e <EXTINT_CallBack>:
+
+EN_EXTINT_ERROR EXTINT_CallBack(EN_EXINT_NUMBER INTx,void(*ptrfunc)(void))
+{
+	if(INTx == EXTINT0 )
+ 76e:	81 11       	cpse	r24, r1
+ 770:	05 c0       	rjmp	.+10     	; 0x77c <EXTINT_CallBack+0xe>
+	{ 
+		ptrINT0 = ptrfunc;
+ 772:	70 93 6f 00 	sts	0x006F, r23	; 0x80006f <ptrINT0+0x1>
+ 776:	60 93 6e 00 	sts	0x006E, r22	; 0x80006e <ptrINT0>
+ 77a:	08 95       	ret
+	}
+	else if(INTx == EXTINT1 )
+ 77c:	81 30       	cpi	r24, 0x01	; 1
+ 77e:	31 f4       	brne	.+12     	; 0x78c <EXTINT_CallBack+0x1e>
+	{
+		 ptrINT1 = ptrfunc;
+ 780:	70 93 6d 00 	sts	0x006D, r23	; 0x80006d <ptrINT1+0x1>
+ 784:	60 93 6c 00 	sts	0x006C, r22	; 0x80006c <ptrINT1>
+	}
+	else
+	{
+		 return EXTINT_NOT_OK;
+	}
+	return EXTINT_OK;
+ 788:	80 e0       	ldi	r24, 0x00	; 0
+ 78a:	08 95       	ret
+	}
+	else if(INTx == EXTINT1 )
+	{
+		 ptrINT1 = ptrfunc;
+	}
+	else if(INTx == EXTINT2 ) 
+ 78c:	82 30       	cpi	r24, 0x02	; 2
+ 78e:	31 f4       	brne	.+12     	; 0x79c <EXTINT_CallBack+0x2e>
+	{
+		ptrINT2 = ptrfunc;
+ 790:	70 93 6b 00 	sts	0x006B, r23	; 0x80006b <ptrINT2+0x1>
+ 794:	60 93 6a 00 	sts	0x006A, r22	; 0x80006a <ptrINT2>
+	}
+	else
+	{
+		 return EXTINT_NOT_OK;
+	}
+	return EXTINT_OK;
+ 798:	80 e0       	ldi	r24, 0x00	; 0
+ 79a:	08 95       	ret
+	{
+		ptrINT2 = ptrfunc;
+	}
+	else
+	{
+		 return EXTINT_NOT_OK;
+ 79c:	81 e0       	ldi	r24, 0x01	; 1
+	}
+	return EXTINT_OK;
+}
+ 79e:	08 95       	ret
+
+000007a0 <__vector_1>:
+
+
+void __vector_1(void)  __attribute__((signal));
+void __vector_1(void)
+{
+ 7a0:	1f 92       	push	r1
+ 7a2:	0f 92       	push	r0
+ 7a4:	0f b6       	in	r0, 0x3f	; 63
+ 7a6:	0f 92       	push	r0
+ 7a8:	11 24       	eor	r1, r1
+ 7aa:	2f 93       	push	r18
+ 7ac:	3f 93       	push	r19
+ 7ae:	4f 93       	push	r20
+ 7b0:	5f 93       	push	r21
+ 7b2:	6f 93       	push	r22
+ 7b4:	7f 93       	push	r23
+ 7b6:	8f 93       	push	r24
+ 7b8:	9f 93       	push	r25
+ 7ba:	af 93       	push	r26
+ 7bc:	bf 93       	push	r27
+ 7be:	ef 93       	push	r30
+ 7c0:	ff 93       	push	r31
+	
+	if(ptrINT0)
+ 7c2:	e0 91 6e 00 	lds	r30, 0x006E	; 0x80006e <ptrINT0>
+ 7c6:	f0 91 6f 00 	lds	r31, 0x006F	; 0x80006f <ptrINT0+0x1>
+ 7ca:	30 97       	sbiw	r30, 0x00	; 0
+ 7cc:	09 f0       	breq	.+2      	; 0x7d0 <__vector_1+0x30>
+	{ 
+		ptrINT0();
+ 7ce:	09 95       	icall
+		
+	}
+}
+ 7d0:	ff 91       	pop	r31
+ 7d2:	ef 91       	pop	r30
+ 7d4:	bf 91       	pop	r27
+ 7d6:	af 91       	pop	r26
+ 7d8:	9f 91       	pop	r25
+ 7da:	8f 91       	pop	r24
+ 7dc:	7f 91       	pop	r23
+ 7de:	6f 91       	pop	r22
+ 7e0:	5f 91       	pop	r21
+ 7e2:	4f 91       	pop	r20
+ 7e4:	3f 91       	pop	r19
+ 7e6:	2f 91       	pop	r18
+ 7e8:	0f 90       	pop	r0
+ 7ea:	0f be       	out	0x3f, r0	; 63
+ 7ec:	0f 90       	pop	r0
+ 7ee:	1f 90       	pop	r1
+ 7f0:	18 95       	reti
+
+000007f2 <__vector_2>:
+
+
+ISR(EXT_INT_1)
+{
+ 7f2:	1f 92       	push	r1
+ 7f4:	0f 92       	push	r0
+ 7f6:	0f b6       	in	r0, 0x3f	; 63
+ 7f8:	0f 92       	push	r0
+ 7fa:	11 24       	eor	r1, r1
+ 7fc:	2f 93       	push	r18
+ 7fe:	3f 93       	push	r19
+ 800:	4f 93       	push	r20
+ 802:	5f 93       	push	r21
+ 804:	6f 93       	push	r22
+ 806:	7f 93       	push	r23
+ 808:	8f 93       	push	r24
+ 80a:	9f 93       	push	r25
+ 80c:	af 93       	push	r26
+ 80e:	bf 93       	push	r27
+ 810:	ef 93       	push	r30
+ 812:	ff 93       	push	r31
+	if(ptrINT1)
+ 814:	e0 91 6c 00 	lds	r30, 0x006C	; 0x80006c <ptrINT1>
+ 818:	f0 91 6d 00 	lds	r31, 0x006D	; 0x80006d <ptrINT1+0x1>
+ 81c:	30 97       	sbiw	r30, 0x00	; 0
+ 81e:	09 f0       	breq	.+2      	; 0x822 <__DATA_REGION_LENGTH__+0x22>
+	{
+		ptrINT1();
+ 820:	09 95       	icall
+	}
+
+	
+}
+ 822:	ff 91       	pop	r31
+ 824:	ef 91       	pop	r30
+ 826:	bf 91       	pop	r27
+ 828:	af 91       	pop	r26
+ 82a:	9f 91       	pop	r25
+ 82c:	8f 91       	pop	r24
+ 82e:	7f 91       	pop	r23
+ 830:	6f 91       	pop	r22
+ 832:	5f 91       	pop	r21
+ 834:	4f 91       	pop	r20
+ 836:	3f 91       	pop	r19
+ 838:	2f 91       	pop	r18
+ 83a:	0f 90       	pop	r0
+ 83c:	0f be       	out	0x3f, r0	; 63
+ 83e:	0f 90       	pop	r0
+ 840:	1f 90       	pop	r1
+ 842:	18 95       	reti
+
+00000844 <__vector_3>:
+}
+*/
+
+void __vector_3(void)  __attribute__((signal));
+void __vector_3(void)
+{
+ 844:	1f 92       	push	r1
+ 846:	0f 92       	push	r0
+ 848:	0f b6       	in	r0, 0x3f	; 63
+ 84a:	0f 92       	push	r0
+ 84c:	11 24       	eor	r1, r1
+ 84e:	2f 93       	push	r18
+ 850:	3f 93       	push	r19
+ 852:	4f 93       	push	r20
+ 854:	5f 93       	push	r21
+ 856:	6f 93       	push	r22
+ 858:	7f 93       	push	r23
+ 85a:	8f 93       	push	r24
+ 85c:	9f 93       	push	r25
+ 85e:	af 93       	push	r26
+ 860:	bf 93       	push	r27
+ 862:	ef 93       	push	r30
+ 864:	ff 93       	push	r31
+	if (ptrINT2 != NULL_PTR)
+ 866:	e0 91 6a 00 	lds	r30, 0x006A	; 0x80006a <ptrINT2>
+ 86a:	f0 91 6b 00 	lds	r31, 0x006B	; 0x80006b <ptrINT2+0x1>
+ 86e:	30 97       	sbiw	r30, 0x00	; 0
+ 870:	09 f0       	breq	.+2      	; 0x874 <__stack+0x15>
+	{
+		ptrINT2();
+ 872:	09 95       	icall
+	}
+ 874:	ff 91       	pop	r31
+ 876:	ef 91       	pop	r30
+ 878:	bf 91       	pop	r27
+ 87a:	af 91       	pop	r26
+ 87c:	9f 91       	pop	r25
+ 87e:	8f 91       	pop	r24
+ 880:	7f 91       	pop	r23
+ 882:	6f 91       	pop	r22
+ 884:	5f 91       	pop	r21
+ 886:	4f 91       	pop	r20
+ 888:	3f 91       	pop	r19
+ 88a:	2f 91       	pop	r18
+ 88c:	0f 90       	pop	r0
+ 88e:	0f be       	out	0x3f, r0	; 63
+ 890:	0f 90       	pop	r0
+ 892:	1f 90       	pop	r1
+ 894:	18 95       	reti
+
+00000896 <timer2_init>:
+{
+	// stop the timer
+	//TCCR2 = NORMAL_MODE;
+	 CLEAR_BIT(TCCR2,CS20);
+	 CLEAR_BIT(TCCR2,CS21);
+	 CLEAR_BIT(TCCR2,CS22);
+ 896:	15 bc       	out	0x25, r1	; 37
+ 898:	78 94       	sei
+ 89a:	89 b7       	in	r24, 0x39	; 57
+ 89c:	80 64       	ori	r24, 0x40	; 64
+ 89e:	89 bf       	out	0x39, r24	; 57
+ 8a0:	08 95       	ret
+
+000008a2 <timer2_start>:
+ 8a2:	85 b5       	in	r24, 0x25	; 37
+ 8a4:	81 60       	ori	r24, 0x01	; 1
+ 8a6:	85 bd       	out	0x25, r24	; 37
+ 8a8:	85 b5       	in	r24, 0x25	; 37
+ 8aa:	82 60       	ori	r24, 0x02	; 2
+ 8ac:	85 bd       	out	0x25, r24	; 37
+ 8ae:	85 b5       	in	r24, 0x25	; 37
+ 8b0:	84 60       	ori	r24, 0x04	; 4
+ 8b2:	85 bd       	out	0x25, r24	; 37
+ 8b4:	08 95       	ret
+
+000008b6 <timer2_set_pwm_normal>:
+	
+}
+
+void timer2_set_pwm_normal(u8 a_dutycycle)
+{
+ 8b6:	cf 93       	push	r28
+ 8b8:	c8 2f       	mov	r28, r24
+	MDIO_voidSetPinDirection(PORTA , PIN4 , PIN_OUT_DIR);  
+ 8ba:	41 e0       	ldi	r20, 0x01	; 1
+ 8bc:	64 e0       	ldi	r22, 0x04	; 4
+ 8be:	80 e0       	ldi	r24, 0x00	; 0
+ 8c0:	b9 dd       	rcall	.-1166   	; 0x434 <MDIO_voidSetPinDirection>
+	MDIO_voidSetPinDirection(PORTC , PIN4 , PIN_OUT_DIR); 
+ 8c2:	41 e0       	ldi	r20, 0x01	; 1
+ 8c4:	64 e0       	ldi	r22, 0x04	; 4
+ 8c6:	82 e0       	ldi	r24, 0x02	; 2
+ 8c8:	b5 dd       	rcall	.-1174   	; 0x434 <MDIO_voidSetPinDirection>
+	comp_VAL = ((a_dutycycle*REG_SIZE)/PERCENT)-ONE_BIT;
+ 8ca:	9c 2f       	mov	r25, r28
+ 8cc:	80 e0       	ldi	r24, 0x00	; 0
+ 8ce:	64 e6       	ldi	r22, 0x64	; 100
+ 8d0:	70 e0       	ldi	r23, 0x00	; 0
+ 8d2:	d6 d0       	rcall	.+428    	; 0xa80 <__divmodhi4>
+ 8d4:	61 50       	subi	r22, 0x01	; 1
+ 8d6:	60 93 70 00 	sts	0x0070, r22	; 0x800070 <comp_VAL>
+	TCNT2 = REG_SIZE - comp_VAL;
+ 8da:	61 95       	neg	r22
+ 8dc:	64 bd       	out	0x24, r22	; 36
+}
+ 8de:	cf 91       	pop	r28
+ 8e0:	08 95       	ret
+
+000008e2 <__vector_5>:
+
+void __vector_5(void) __attribute__((signal));
+void __vector_5(void)
+{
+ 8e2:	1f 92       	push	r1
+ 8e4:	0f 92       	push	r0
+ 8e6:	0f b6       	in	r0, 0x3f	; 63
+ 8e8:	0f 92       	push	r0
+ 8ea:	11 24       	eor	r1, r1
+ 8ec:	2f 93       	push	r18
+ 8ee:	3f 93       	push	r19
+ 8f0:	4f 93       	push	r20
+ 8f2:	5f 93       	push	r21
+ 8f4:	6f 93       	push	r22
+ 8f6:	7f 93       	push	r23
+ 8f8:	8f 93       	push	r24
+ 8fa:	9f 93       	push	r25
+ 8fc:	af 93       	push	r26
+ 8fe:	bf 93       	push	r27
+ 900:	ef 93       	push	r30
+ 902:	ff 93       	push	r31
+
+	if(FLAG_OVF==ON_TIME)
+ 904:	80 91 71 00 	lds	r24, 0x0071	; 0x800071 <FLAG_OVF>
+ 908:	90 91 72 00 	lds	r25, 0x0072	; 0x800072 <FLAG_OVF+0x1>
+ 90c:	a0 91 73 00 	lds	r26, 0x0073	; 0x800073 <FLAG_OVF+0x2>
+ 910:	b0 91 74 00 	lds	r27, 0x0074	; 0x800074 <FLAG_OVF+0x3>
+ 914:	00 97       	sbiw	r24, 0x00	; 0
+ 916:	a1 05       	cpc	r26, r1
+ 918:	b1 05       	cpc	r27, r1
+ 91a:	c1 f4       	brne	.+48     	; 0x94c <__vector_5+0x6a>
+	{
+		// switch level of cycle to LOW
+		MDIO_voidSetPinValue(PORTA ,PIN4 , PIN_LOW_VALUE);
+ 91c:	40 e0       	ldi	r20, 0x00	; 0
+ 91e:	64 e0       	ldi	r22, 0x04	; 4
+ 920:	80 e0       	ldi	r24, 0x00	; 0
+ 922:	01 de       	rcall	.-1022   	; 0x526 <MDIO_voidSetPinValue>
+		MDIO_voidSetPinValue(PORTC ,PIN4 , PIN_LOW_VALUE);
+ 924:	40 e0       	ldi	r20, 0x00	; 0
+ 926:	64 e0       	ldi	r22, 0x04	; 4
+ 928:	82 e0       	ldi	r24, 0x02	; 2
+ 92a:	fd dd       	rcall	.-1030   	; 0x526 <MDIO_voidSetPinValue>
+		FLAG_OVF=OFF_TIME;
+ 92c:	81 e0       	ldi	r24, 0x01	; 1
+ 92e:	90 e0       	ldi	r25, 0x00	; 0
+ 930:	a0 e0       	ldi	r26, 0x00	; 0
+ 932:	b0 e0       	ldi	r27, 0x00	; 0
+ 934:	80 93 71 00 	sts	0x0071, r24	; 0x800071 <FLAG_OVF>
+ 938:	90 93 72 00 	sts	0x0072, r25	; 0x800072 <FLAG_OVF+0x1>
+ 93c:	a0 93 73 00 	sts	0x0073, r26	; 0x800073 <FLAG_OVF+0x2>
+ 940:	b0 93 74 00 	sts	0x0074, r27	; 0x800074 <FLAG_OVF+0x3>
+		TCNT2 =comp_VAL;
+ 944:	80 91 70 00 	lds	r24, 0x0070	; 0x800070 <comp_VAL>
+ 948:	84 bd       	out	0x24, r24	; 36
+ 94a:	18 c0       	rjmp	.+48     	; 0x97c <__vector_5+0x9a>
+	}
+	else if(FLAG_OVF == OFF_TIME)
+ 94c:	01 97       	sbiw	r24, 0x01	; 1
+ 94e:	a1 05       	cpc	r26, r1
+ 950:	b1 05       	cpc	r27, r1
+ 952:	a1 f4       	brne	.+40     	; 0x97c <__vector_5+0x9a>
+	{
+		// switch level of cycle to HIGH
+		MDIO_voidSetPinValue(PORTA ,PIN4 , PIN_HIGH_VALUE);
+ 954:	41 e0       	ldi	r20, 0x01	; 1
+ 956:	64 e0       	ldi	r22, 0x04	; 4
+ 958:	80 e0       	ldi	r24, 0x00	; 0
+ 95a:	e5 dd       	rcall	.-1078   	; 0x526 <MDIO_voidSetPinValue>
+		MDIO_voidSetPinValue(PORTC ,PIN4 , PIN_HIGH_VALUE);
+ 95c:	41 e0       	ldi	r20, 0x01	; 1
+ 95e:	64 e0       	ldi	r22, 0x04	; 4
+ 960:	82 e0       	ldi	r24, 0x02	; 2
+ 962:	e1 dd       	rcall	.-1086   	; 0x526 <MDIO_voidSetPinValue>
+		FLAG_OVF=ON_TIME;
+ 964:	10 92 71 00 	sts	0x0071, r1	; 0x800071 <FLAG_OVF>
+ 968:	10 92 72 00 	sts	0x0072, r1	; 0x800072 <FLAG_OVF+0x1>
+ 96c:	10 92 73 00 	sts	0x0073, r1	; 0x800073 <FLAG_OVF+0x2>
+ 970:	10 92 74 00 	sts	0x0074, r1	; 0x800074 <FLAG_OVF+0x3>
+		TCNT2 =REG_SIZE - comp_VAL;
+ 974:	80 91 70 00 	lds	r24, 0x0070	; 0x800070 <comp_VAL>
+ 978:	81 95       	neg	r24
+ 97a:	84 bd       	out	0x24, r24	; 36
+	}
+		
+}
+ 97c:	ff 91       	pop	r31
+ 97e:	ef 91       	pop	r30
+ 980:	bf 91       	pop	r27
+ 982:	af 91       	pop	r26
+ 984:	9f 91       	pop	r25
+ 986:	8f 91       	pop	r24
+ 988:	7f 91       	pop	r23
+ 98a:	6f 91       	pop	r22
+ 98c:	5f 91       	pop	r21
+ 98e:	4f 91       	pop	r20
+ 990:	3f 91       	pop	r19
+ 992:	2f 91       	pop	r18
+ 994:	0f 90       	pop	r0
+ 996:	0f be       	out	0x3f, r0	; 63
+ 998:	0f 90       	pop	r0
+ 99a:	1f 90       	pop	r1
+ 99c:	18 95       	reti
+
+0000099e <MTIMER0_voidInit>:
+}
+
+
+void MTIMER0_voidSetOCR0Value(u8 A_u8Value)
+{
+	OCR0=A_u8Value;
+ 99e:	83 b7       	in	r24, 0x33	; 51
+ 9a0:	87 7f       	andi	r24, 0xF7	; 247
+ 9a2:	83 bf       	out	0x33, r24	; 51
+ 9a4:	83 b7       	in	r24, 0x33	; 51
+ 9a6:	8f 7b       	andi	r24, 0xBF	; 191
+ 9a8:	83 bf       	out	0x33, r24	; 51
+ 9aa:	8f b7       	in	r24, 0x3f	; 63
+ 9ac:	80 68       	ori	r24, 0x80	; 128
+ 9ae:	8f bf       	out	0x3f, r24	; 63
+ 9b0:	89 b7       	in	r24, 0x39	; 57
+ 9b2:	81 60       	ori	r24, 0x01	; 1
+ 9b4:	89 bf       	out	0x39, r24	; 57
+ 9b6:	89 b7       	in	r24, 0x39	; 57
+ 9b8:	8d 7f       	andi	r24, 0xFD	; 253
+ 9ba:	89 bf       	out	0x39, r24	; 57
+ 9bc:	83 b7       	in	r24, 0x33	; 51
+ 9be:	88 7f       	andi	r24, 0xF8	; 248
+ 9c0:	83 bf       	out	0x33, r24	; 51
+ 9c2:	83 b7       	in	r24, 0x33	; 51
+ 9c4:	82 60       	ori	r24, 0x02	; 2
+ 9c6:	83 bf       	out	0x33, r24	; 51
+ 9c8:	08 95       	ret
+
+000009ca <MTIMER0_voidsetCallBackOVF>:
+ 9ca:	00 97       	sbiw	r24, 0x00	; 0
+ 9cc:	21 f0       	breq	.+8      	; 0x9d6 <MTIMER0_voidsetCallBackOVF+0xc>
+ 9ce:	90 93 78 00 	sts	0x0078, r25	; 0x800078 <TIMER0_OVF_CallBack+0x1>
+ 9d2:	80 93 77 00 	sts	0x0077, r24	; 0x800077 <TIMER0_OVF_CallBack>
+ 9d6:	08 95       	ret
+
+000009d8 <MTIMER0_voidSetPreloadValue>:
+ 9d8:	82 bf       	out	0x32, r24	; 50
+ 9da:	08 95       	ret
+
+000009dc <__vector_11>:
+}
+
+
+void __vector_11(void)  __attribute__((signal));
+void __vector_11(void)
+{
+ 9dc:	1f 92       	push	r1
+ 9de:	0f 92       	push	r0
+ 9e0:	0f b6       	in	r0, 0x3f	; 63
+ 9e2:	0f 92       	push	r0
+ 9e4:	11 24       	eor	r1, r1
+ 9e6:	2f 93       	push	r18
+ 9e8:	3f 93       	push	r19
+ 9ea:	4f 93       	push	r20
+ 9ec:	5f 93       	push	r21
+ 9ee:	6f 93       	push	r22
+ 9f0:	7f 93       	push	r23
+ 9f2:	8f 93       	push	r24
+ 9f4:	9f 93       	push	r25
+ 9f6:	af 93       	push	r26
+ 9f8:	bf 93       	push	r27
+ 9fa:	ef 93       	push	r30
+ 9fc:	ff 93       	push	r31
+	if (TIMER0_OVF_CallBack!= NULL)
+ 9fe:	e0 91 77 00 	lds	r30, 0x0077	; 0x800077 <TIMER0_OVF_CallBack>
+ a02:	f0 91 78 00 	lds	r31, 0x0078	; 0x800078 <TIMER0_OVF_CallBack+0x1>
+ a06:	30 97       	sbiw	r30, 0x00	; 0
+ a08:	09 f0       	breq	.+2      	; 0xa0c <__vector_11+0x30>
+	{
+		TIMER0_OVF_CallBack();
+ a0a:	09 95       	icall
+	}
+}
+ a0c:	ff 91       	pop	r31
+ a0e:	ef 91       	pop	r30
+ a10:	bf 91       	pop	r27
+ a12:	af 91       	pop	r26
+ a14:	9f 91       	pop	r25
+ a16:	8f 91       	pop	r24
+ a18:	7f 91       	pop	r23
+ a1a:	6f 91       	pop	r22
+ a1c:	5f 91       	pop	r21
+ a1e:	4f 91       	pop	r20
+ a20:	3f 91       	pop	r19
+ a22:	2f 91       	pop	r18
+ a24:	0f 90       	pop	r0
+ a26:	0f be       	out	0x3f, r0	; 63
+ a28:	0f 90       	pop	r0
+ a2a:	1f 90       	pop	r1
+ a2c:	18 95       	reti
+
+00000a2e <__vector_10>:
+
+
+void __vector_10(void)  __attribute__((signal));
+void __vector_10(void)
+{
+ a2e:	1f 92       	push	r1
+ a30:	0f 92       	push	r0
+ a32:	0f b6       	in	r0, 0x3f	; 63
+ a34:	0f 92       	push	r0
+ a36:	11 24       	eor	r1, r1
+ a38:	2f 93       	push	r18
+ a3a:	3f 93       	push	r19
+ a3c:	4f 93       	push	r20
+ a3e:	5f 93       	push	r21
+ a40:	6f 93       	push	r22
+ a42:	7f 93       	push	r23
+ a44:	8f 93       	push	r24
+ a46:	9f 93       	push	r25
+ a48:	af 93       	push	r26
+ a4a:	bf 93       	push	r27
+ a4c:	ef 93       	push	r30
+ a4e:	ff 93       	push	r31
+	if (TIMER0_CTC_CallBack!= NULL)
+ a50:	e0 91 75 00 	lds	r30, 0x0075	; 0x800075 <TIMER0_CTC_CallBack>
+ a54:	f0 91 76 00 	lds	r31, 0x0076	; 0x800076 <TIMER0_CTC_CallBack+0x1>
+ a58:	30 97       	sbiw	r30, 0x00	; 0
+ a5a:	09 f0       	breq	.+2      	; 0xa5e <__vector_10+0x30>
+	{
+		TIMER0_CTC_CallBack();
+ a5c:	09 95       	icall
+	}
+}
+ a5e:	ff 91       	pop	r31
+ a60:	ef 91       	pop	r30
+ a62:	bf 91       	pop	r27
+ a64:	af 91       	pop	r26
+ a66:	9f 91       	pop	r25
+ a68:	8f 91       	pop	r24
+ a6a:	7f 91       	pop	r23
+ a6c:	6f 91       	pop	r22
+ a6e:	5f 91       	pop	r21
+ a70:	4f 91       	pop	r20
+ a72:	3f 91       	pop	r19
+ a74:	2f 91       	pop	r18
+ a76:	0f 90       	pop	r0
+ a78:	0f be       	out	0x3f, r0	; 63
+ a7a:	0f 90       	pop	r0
+ a7c:	1f 90       	pop	r1
+ a7e:	18 95       	reti
+
+00000a80 <__divmodhi4>:
+ a80:	97 fb       	bst	r25, 7
+ a82:	07 2e       	mov	r0, r23
+ a84:	16 f4       	brtc	.+4      	; 0xa8a <__divmodhi4+0xa>
+ a86:	00 94       	com	r0
+ a88:	06 d0       	rcall	.+12     	; 0xa96 <__divmodhi4_neg1>
+ a8a:	77 fd       	sbrc	r23, 7
+ a8c:	08 d0       	rcall	.+16     	; 0xa9e <__divmodhi4_neg2>
+ a8e:	0b d0       	rcall	.+22     	; 0xaa6 <__udivmodhi4>
+ a90:	07 fc       	sbrc	r0, 7
+ a92:	05 d0       	rcall	.+10     	; 0xa9e <__divmodhi4_neg2>
+ a94:	3e f4       	brtc	.+14     	; 0xaa4 <__divmodhi4_exit>
+
+00000a96 <__divmodhi4_neg1>:
+ a96:	90 95       	com	r25
+ a98:	81 95       	neg	r24
+ a9a:	9f 4f       	sbci	r25, 0xFF	; 255
+ a9c:	08 95       	ret
+
+00000a9e <__divmodhi4_neg2>:
+ a9e:	70 95       	com	r23
+ aa0:	61 95       	neg	r22
+ aa2:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00000aa4 <__divmodhi4_exit>:
+ aa4:	08 95       	ret
+
+00000aa6 <__udivmodhi4>:
+ aa6:	aa 1b       	sub	r26, r26
+ aa8:	bb 1b       	sub	r27, r27
+ aaa:	51 e1       	ldi	r21, 0x11	; 17
+ aac:	07 c0       	rjmp	.+14     	; 0xabc <__udivmodhi4_ep>
+
+00000aae <__udivmodhi4_loop>:
+ aae:	aa 1f       	adc	r26, r26
+ ab0:	bb 1f       	adc	r27, r27
+ ab2:	a6 17       	cp	r26, r22
+ ab4:	b7 07       	cpc	r27, r23
+ ab6:	10 f0       	brcs	.+4      	; 0xabc <__udivmodhi4_ep>
+ ab8:	a6 1b       	sub	r26, r22
+ aba:	b7 0b       	sbc	r27, r23
+
+00000abc <__udivmodhi4_ep>:
+ abc:	88 1f       	adc	r24, r24
+ abe:	99 1f       	adc	r25, r25
+ ac0:	5a 95       	dec	r21
+ ac2:	a9 f7       	brne	.-22     	; 0xaae <__udivmodhi4_loop>
+ ac4:	80 95       	com	r24
+ ac6:	90 95       	com	r25
+ ac8:	bc 01       	movw	r22, r24
+ aca:	cd 01       	movw	r24, r26
+ acc:	08 95       	ret
+
+00000ace <_exit>:
+ ace:	f8 94       	cli
+
+00000ad0 <__stop_program>:
+ ad0:	ff cf       	rjmp	.-2      	; 0xad0 <__stop_program>
